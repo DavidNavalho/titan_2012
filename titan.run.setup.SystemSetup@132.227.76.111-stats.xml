@@ -1,0 +1,2731 @@
+<sys.stats.RpcStats>
+  <T0>4.902236928000001</T0>
+  <rpcRTT/>
+  <inMsgTraffic>
+    <entry>
+      <string>titan.sys.messages.rpc.TriggerDelivery</string>
+      <sys.stats.BinnedTally>
+        <name></name>
+        <binSize>60.0</binSize>
+        <bins>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>366.0</maxValue>
+            <minValue>324.0</minValue>
+            <sumValue>2112.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>6</numObs>
+            <sumSquares>745776.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>352.0</curAverage>
+            <curSum2>2352.0000000000014</curSum2>
+            <log>
+              <manager>
+                <props/>
+                <changes serialization="custom">
+                  <java.beans.PropertyChangeSupport>
+                    <default>
+                      <propertyChangeSupportSerializedDataVersion>2</propertyChangeSupportSerializedDataVersion>
+                      <source class="java-class">java.util.logging.LogManager</source>
+                    </default>
+                    <null/>
+                  </java.beans.PropertyChangeSupport>
+                </changes>
+                <namedLoggers>
+                  <entry>
+                    <string>sys.dht.impl.DHT_ClientStub</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef>
+                      <referent class="java.util.logging.Logger">
+                        <manager reference="../../../../.."/>
+                        <name>sys.dht.impl.DHT_ClientStub</name>
+                        <useParentHandlers>true</useParentHandlers>
+                        <anonymous>false</anonymous>
+                        <parent>
+                          <manager reference="../../../../../.."/>
+                          <name>sys.dht</name>
+                          <useParentHandlers>true</useParentHandlers>
+                          <anonymous>false</anonymous>
+                          <parent class="java.util.logging.LogManager$RootLogger">
+                            <manager reference="../../../../../../.."/>
+                            <name></name>
+                            <useParentHandlers>true</useParentHandlers>
+                            <anonymous>false</anonymous>
+                            <kids>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>global</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>800</levelValue>
+                                </referent>
+                                <queue>
+                                  <lock/>
+                                  <queueLength>0</queueLength>
+                                </queue>
+                                <name>global</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null">
+                                    <lock/>
+                                    <queueLength>0</queueLength>
+                                  </queue>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.Sys</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>800</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.Sys</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.scheduler.VT_Scheduler</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>800</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.scheduler.VT_Scheduler</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.scheduler.RT_Scheduler</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>800</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.scheduler.RT_Scheduler</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.net.impl.rpc.RpcPacket</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>800</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.net.impl.rpc.RpcPacket</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger" reference="../../../.."/>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.dht</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.net.impl.rpc.RpcFactoryImpl</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>800</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.net.impl.rpc.RpcFactoryImpl</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.net.impl.providers.nio.TcpEndpoint</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>800</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.net.impl.providers.nio.TcpEndpoint</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.rpc</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>800</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.rpc</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.net.impl.KryoSerializer</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>800</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.net.impl.KryoSerializer</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.net.impl.providers.KryoInputBuffer</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>800</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.net.impl.providers.KryoInputBuffer</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.net.impl.providers.KryoOutputBuffer</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>800</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.net.impl.providers.KryoOutputBuffer</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger" reference="../../../../../../../../../.."/>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>umontreal.iro.lecuyer.stat</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sun.awt.SunToolkit</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>800</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sun.awt.SunToolkit</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sun.awt.AppContext</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>800</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sun.awt.AppContext</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                            </kids>
+                            <levelObject>
+                              <name>INFO</name>
+                              <value>800</value>
+                              <resourceBundleName>sun.util.logging.resources.logging</resourceBundleName>
+                            </levelObject>
+                            <levelValue>800</levelValue>
+                            <outer-class reference="../../../../../../.."/>
+                          </parent>
+                          <kids>
+                            <java.util.logging.LogManager_-LoggerWeakRef>
+                              <referent class="java.util.logging.Logger">
+                                <manager reference="../../../../../../../../.."/>
+                                <name>sys.dht.impl.DHT_NodeImpl</name>
+                                <useParentHandlers>true</useParentHandlers>
+                                <anonymous>false</anonymous>
+                                <parent reference="../../../.."/>
+                                <levelValue>800</levelValue>
+                              </referent>
+                              <queue reference="../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                              <name>sys.dht.impl.DHT_NodeImpl</name>
+                              <parentRef>
+                                <referent class="java.util.logging.Logger" reference="../../../.."/>
+                                <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                              </parentRef>
+                              <outer-class reference="../../../../../../../.."/>
+                            </java.util.logging.LogManager_-LoggerWeakRef>
+                            <java.util.logging.LogManager_-LoggerWeakRef>
+                              <referent class="java.util.logging.Logger">
+                                <manager reference="../../../../../../../../.."/>
+                                <name>sys.dht.discovery.Discovery</name>
+                                <useParentHandlers>true</useParentHandlers>
+                                <anonymous>false</anonymous>
+                                <parent reference="../../../.."/>
+                                <levelValue>800</levelValue>
+                              </referent>
+                              <queue reference="../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                              <name>sys.dht.discovery.Discovery</name>
+                              <parentRef>
+                                <referent class="java.util.logging.Logger" reference="../../../.."/>
+                                <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                              </parentRef>
+                              <outer-class reference="../../../../../../../.."/>
+                            </java.util.logging.LogManager_-LoggerWeakRef>
+                            <java.util.logging.LogManager_-LoggerWeakRef>
+                              <referent class="java.util.logging.Logger">
+                                <manager reference="../../../../../../../../.."/>
+                                <name>sys.dht.catadupa</name>
+                                <useParentHandlers>true</useParentHandlers>
+                                <anonymous>false</anonymous>
+                                <parent reference="../../../.."/>
+                                <kids>
+                                  <java.util.logging.LogManager_-LoggerWeakRef>
+                                    <referent class="java.util.logging.Logger">
+                                      <manager reference="../../../../../../../../../../../.."/>
+                                      <name>sys.dht.catadupa.SeedDB</name>
+                                      <useParentHandlers>true</useParentHandlers>
+                                      <anonymous>false</anonymous>
+                                      <parent reference="../../../.."/>
+                                      <levelValue>800</levelValue>
+                                    </referent>
+                                    <queue reference="../../../../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                    <name>sys.dht.catadupa.SeedDB</name>
+                                    <parentRef>
+                                      <referent class="java.util.logging.Logger" reference="../../../.."/>
+                                      <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../../../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                    </parentRef>
+                                    <outer-class reference="../../../../../../../../../../.."/>
+                                  </java.util.logging.LogManager_-LoggerWeakRef>
+                                  <java.util.logging.LogManager_-LoggerWeakRef>
+                                    <referent class="java.util.logging.Logger">
+                                      <manager reference="../../../../../../../../../../../.."/>
+                                      <name>sys.dht.catadupa.DB</name>
+                                      <useParentHandlers>true</useParentHandlers>
+                                      <anonymous>false</anonymous>
+                                      <parent reference="../../../.."/>
+                                      <levelValue>800</levelValue>
+                                    </referent>
+                                    <queue reference="../../../../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                    <name>sys.dht.catadupa.DB</name>
+                                    <parentRef>
+                                      <referent class="java.util.logging.Logger" reference="../../../.."/>
+                                      <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../../../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                    </parentRef>
+                                    <outer-class reference="../../../../../../../../../../.."/>
+                                  </java.util.logging.LogManager_-LoggerWeakRef>
+                                  <java.util.logging.LogManager_-LoggerWeakRef>
+                                    <referent class="java.util.logging.Logger">
+                                      <manager reference="../../../../../../../../../../../.."/>
+                                      <name>sys.dht.catadupa.CatadupaNode</name>
+                                      <useParentHandlers>true</useParentHandlers>
+                                      <anonymous>false</anonymous>
+                                      <parent reference="../../../.."/>
+                                      <levelValue>800</levelValue>
+                                    </referent>
+                                    <queue reference="../../../../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                    <name>sys.dht.catadupa.CatadupaNode</name>
+                                    <parentRef>
+                                      <referent class="java.util.logging.Logger" reference="../../../.."/>
+                                      <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../../../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                    </parentRef>
+                                    <outer-class reference="../../../../../../../../../../.."/>
+                                  </java.util.logging.LogManager_-LoggerWeakRef>
+                                </kids>
+                                <levelValue>800</levelValue>
+                              </referent>
+                              <queue reference="../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                              <name>sys.dht.catadupa</name>
+                              <parentRef>
+                                <referent class="java.util.logging.Logger" reference="../../../.."/>
+                                <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                              </parentRef>
+                              <outer-class reference="../../../../../../../.."/>
+                            </java.util.logging.LogManager_-LoggerWeakRef>
+                            <java.util.logging.LogManager_-LoggerWeakRef>
+                              <referent class="java.util.logging.Logger" reference="../../../.."/>
+                              <queue reference="../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                              <name>sys.dht.impl.DHT_ClientStub</name>
+                              <parentRef>
+                                <referent class="java.util.logging.Logger" reference="../../../.."/>
+                                <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                              </parentRef>
+                              <outer-class reference="../../../../../../../.."/>
+                            </java.util.logging.LogManager_-LoggerWeakRef>
+                          </kids>
+                          <levelValue>800</levelValue>
+                        </parent>
+                        <levelValue>800</levelValue>
+                      </referent>
+                      <queue reference="../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                      <name>sys.dht.impl.DHT_ClientStub</name>
+                      <node>
+                        <loggerRef reference="../.."/>
+                        <parent>
+                          <children>
+                            <entry>
+                              <string>DHT_ClientStub</string>
+                              <java.util.logging.LogManager_-LogNode reference="../../../.."/>
+                            </entry>
+                            <entry>
+                              <string>DHT_NodeImpl</string>
+                              <java.util.logging.LogManager_-LogNode>
+                                <loggerRef>
+                                  <referent class="java.util.logging.Logger" reference="../../../../../../../referent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/referent"/>
+                                  <queue reference="../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                  <name>sys.dht.impl.DHT_NodeImpl</name>
+                                  <node reference="../.."/>
+                                  <outer-class reference="../../../../../../../../../.."/>
+                                </loggerRef>
+                                <parent reference="../../../.."/>
+                              </java.util.logging.LogManager_-LogNode>
+                            </entry>
+                          </children>
+                          <parent>
+                            <children>
+                              <entry>
+                                <string>catadupa</string>
+                                <java.util.logging.LogManager_-LogNode>
+                                  <children>
+                                    <entry>
+                                      <string>SeedDB</string>
+                                      <java.util.logging.LogManager_-LogNode>
+                                        <loggerRef>
+                                          <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../referent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[3]/referent/kids/java.util.logging.LogManager_-LoggerWeakRef/referent"/>
+                                          <queue reference="../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                          <name>sys.dht.catadupa.SeedDB</name>
+                                          <node reference="../.."/>
+                                          <outer-class reference="../../../../../../../../../../../../../.."/>
+                                        </loggerRef>
+                                        <parent reference="../../../.."/>
+                                      </java.util.logging.LogManager_-LogNode>
+                                    </entry>
+                                    <entry>
+                                      <string>DB</string>
+                                      <java.util.logging.LogManager_-LogNode>
+                                        <loggerRef>
+                                          <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../referent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[3]/referent/kids/java.util.logging.LogManager_-LoggerWeakRef[2]/referent"/>
+                                          <queue reference="../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                          <name>sys.dht.catadupa.DB</name>
+                                          <node reference="../.."/>
+                                          <outer-class reference="../../../../../../../../../../../../../.."/>
+                                        </loggerRef>
+                                        <parent reference="../../../.."/>
+                                      </java.util.logging.LogManager_-LogNode>
+                                    </entry>
+                                    <entry>
+                                      <string>CatadupaNode</string>
+                                      <java.util.logging.LogManager_-LogNode>
+                                        <loggerRef>
+                                          <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../referent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[3]/referent/kids/java.util.logging.LogManager_-LoggerWeakRef[3]/referent"/>
+                                          <queue reference="../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                          <name>sys.dht.catadupa.CatadupaNode</name>
+                                          <node reference="../.."/>
+                                          <outer-class reference="../../../../../../../../../../../../../.."/>
+                                        </loggerRef>
+                                        <parent reference="../../../.."/>
+                                      </java.util.logging.LogManager_-LogNode>
+                                    </entry>
+                                  </children>
+                                  <loggerRef>
+                                    <referent class="java.util.logging.Logger" reference="../../../../../../../../referent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[3]/referent"/>
+                                    <queue reference="../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                    <name>sys.dht.catadupa</name>
+                                    <node reference="../.."/>
+                                    <outer-class reference="../../../../../../../../../../.."/>
+                                  </loggerRef>
+                                  <parent reference="../../../.."/>
+                                </java.util.logging.LogManager_-LogNode>
+                              </entry>
+                              <entry>
+                                <string>impl</string>
+                                <java.util.logging.LogManager_-LogNode reference="../../../.."/>
+                              </entry>
+                              <entry>
+                                <string>discovery</string>
+                                <java.util.logging.LogManager_-LogNode>
+                                  <children>
+                                    <entry>
+                                      <string>Discovery</string>
+                                      <java.util.logging.LogManager_-LogNode>
+                                        <loggerRef>
+                                          <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../referent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[2]/referent"/>
+                                          <queue reference="../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                          <name>sys.dht.discovery.Discovery</name>
+                                          <node reference="../.."/>
+                                          <outer-class reference="../../../../../../../../../../../../../.."/>
+                                        </loggerRef>
+                                        <parent reference="../../../.."/>
+                                      </java.util.logging.LogManager_-LogNode>
+                                    </entry>
+                                  </children>
+                                  <parent reference="../../../.."/>
+                                </java.util.logging.LogManager_-LogNode>
+                              </entry>
+                            </children>
+                            <loggerRef>
+                              <referent class="java.util.logging.Logger" reference="../../../../../referent/parent"/>
+                              <queue reference="../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                              <name>sys.dht</name>
+                              <node reference="../.."/>
+                              <outer-class reference="../../../../../../../.."/>
+                            </loggerRef>
+                            <parent>
+                              <children>
+                                <entry>
+                                  <string>rpc</string>
+                                  <java.util.logging.LogManager_-LogNode>
+                                    <loggerRef>
+                                      <referent class="java.util.logging.Logger" reference="../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[9]/referent"/>
+                                      <queue reference="../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                      <name>sys.rpc</name>
+                                      <node reference="../.."/>
+                                      <outer-class reference="../../../../../../../../../../../.."/>
+                                    </loggerRef>
+                                    <parent reference="../../../.."/>
+                                  </java.util.logging.LogManager_-LogNode>
+                                </entry>
+                                <entry>
+                                  <string>scheduler</string>
+                                  <java.util.logging.LogManager_-LogNode>
+                                    <children>
+                                      <entry>
+                                        <string>RT_Scheduler</string>
+                                        <java.util.logging.LogManager_-LogNode>
+                                          <loggerRef>
+                                            <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[4]/referent"/>
+                                            <queue reference="../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                            <name>sys.scheduler.RT_Scheduler</name>
+                                            <node reference="../.."/>
+                                            <outer-class reference="../../../../../../../../../../../../../../.."/>
+                                          </loggerRef>
+                                          <parent reference="../../../.."/>
+                                        </java.util.logging.LogManager_-LogNode>
+                                      </entry>
+                                      <entry>
+                                        <string>VT_Scheduler</string>
+                                        <java.util.logging.LogManager_-LogNode>
+                                          <loggerRef>
+                                            <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[3]/referent"/>
+                                            <queue reference="../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                            <name>sys.scheduler.VT_Scheduler</name>
+                                            <node reference="../.."/>
+                                            <outer-class reference="../../../../../../../../../../../../../../.."/>
+                                          </loggerRef>
+                                          <parent reference="../../../.."/>
+                                        </java.util.logging.LogManager_-LogNode>
+                                      </entry>
+                                    </children>
+                                    <parent reference="../../../.."/>
+                                  </java.util.logging.LogManager_-LogNode>
+                                </entry>
+                                <entry>
+                                  <string>dht</string>
+                                  <java.util.logging.LogManager_-LogNode reference="../../../.."/>
+                                </entry>
+                                <entry>
+                                  <string>net</string>
+                                  <java.util.logging.LogManager_-LogNode>
+                                    <children>
+                                      <entry>
+                                        <string>impl</string>
+                                        <java.util.logging.LogManager_-LogNode>
+                                          <children>
+                                            <entry>
+                                              <string>rpc</string>
+                                              <java.util.logging.LogManager_-LogNode>
+                                                <children>
+                                                  <entry>
+                                                    <string>RpcFactoryImpl</string>
+                                                    <java.util.logging.LogManager_-LogNode>
+                                                      <loggerRef>
+                                                        <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[7]/referent"/>
+                                                        <queue reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                        <name>sys.net.impl.rpc.RpcFactoryImpl</name>
+                                                        <node reference="../.."/>
+                                                        <outer-class reference="../../../../../../../../../../../../../../../../../../../../.."/>
+                                                      </loggerRef>
+                                                      <parent reference="../../../.."/>
+                                                    </java.util.logging.LogManager_-LogNode>
+                                                  </entry>
+                                                  <entry>
+                                                    <string>RpcPacket</string>
+                                                    <java.util.logging.LogManager_-LogNode>
+                                                      <loggerRef>
+                                                        <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[5]/referent"/>
+                                                        <queue reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                        <name>sys.net.impl.rpc.RpcPacket</name>
+                                                        <node reference="../.."/>
+                                                        <outer-class reference="../../../../../../../../../../../../../../../../../../../../.."/>
+                                                      </loggerRef>
+                                                      <parent reference="../../../.."/>
+                                                    </java.util.logging.LogManager_-LogNode>
+                                                  </entry>
+                                                </children>
+                                                <parent reference="../../../.."/>
+                                              </java.util.logging.LogManager_-LogNode>
+                                            </entry>
+                                            <entry>
+                                              <string>providers</string>
+                                              <java.util.logging.LogManager_-LogNode>
+                                                <children>
+                                                  <entry>
+                                                    <string>KryoInputBuffer</string>
+                                                    <java.util.logging.LogManager_-LogNode>
+                                                      <loggerRef>
+                                                        <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[11]/referent"/>
+                                                        <queue reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                        <name>sys.net.impl.providers.KryoInputBuffer</name>
+                                                        <node reference="../.."/>
+                                                        <outer-class reference="../../../../../../../../../../../../../../../../../../../../.."/>
+                                                      </loggerRef>
+                                                      <parent reference="../../../.."/>
+                                                    </java.util.logging.LogManager_-LogNode>
+                                                  </entry>
+                                                  <entry>
+                                                    <string>nio</string>
+                                                    <java.util.logging.LogManager_-LogNode>
+                                                      <children>
+                                                        <entry>
+                                                          <string>TcpEndpoint</string>
+                                                          <java.util.logging.LogManager_-LogNode>
+                                                            <loggerRef>
+                                                              <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[8]/referent"/>
+                                                              <queue reference="../../../../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                              <name>sys.net.impl.providers.nio.TcpEndpoint</name>
+                                                              <node reference="../.."/>
+                                                              <outer-class reference="../../../../../../../../../../../../../../../../../../../../../../../.."/>
+                                                            </loggerRef>
+                                                            <parent reference="../../../.."/>
+                                                          </java.util.logging.LogManager_-LogNode>
+                                                        </entry>
+                                                      </children>
+                                                      <parent reference="../../../.."/>
+                                                    </java.util.logging.LogManager_-LogNode>
+                                                  </entry>
+                                                  <entry>
+                                                    <string>KryoOutputBuffer</string>
+                                                    <java.util.logging.LogManager_-LogNode>
+                                                      <loggerRef>
+                                                        <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[12]/referent"/>
+                                                        <queue reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                        <name>sys.net.impl.providers.KryoOutputBuffer</name>
+                                                        <node reference="../.."/>
+                                                        <outer-class reference="../../../../../../../../../../../../../../../../../../../../.."/>
+                                                      </loggerRef>
+                                                      <parent reference="../../../.."/>
+                                                    </java.util.logging.LogManager_-LogNode>
+                                                  </entry>
+                                                </children>
+                                                <parent reference="../../../.."/>
+                                              </java.util.logging.LogManager_-LogNode>
+                                            </entry>
+                                            <entry>
+                                              <string>KryoSerializer</string>
+                                              <java.util.logging.LogManager_-LogNode>
+                                                <loggerRef>
+                                                  <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[10]/referent"/>
+                                                  <queue reference="../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                  <name>sys.net.impl.KryoSerializer</name>
+                                                  <node reference="../.."/>
+                                                  <outer-class reference="../../../../../../../../../../../../../../../../../.."/>
+                                                </loggerRef>
+                                                <parent reference="../../../.."/>
+                                              </java.util.logging.LogManager_-LogNode>
+                                            </entry>
+                                          </children>
+                                          <parent reference="../../../.."/>
+                                        </java.util.logging.LogManager_-LogNode>
+                                      </entry>
+                                    </children>
+                                    <parent reference="../../../.."/>
+                                  </java.util.logging.LogManager_-LogNode>
+                                </entry>
+                                <entry>
+                                  <string>Sys</string>
+                                  <java.util.logging.LogManager_-LogNode>
+                                    <loggerRef>
+                                      <referent class="java.util.logging.Logger" reference="../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[2]/referent"/>
+                                      <queue reference="../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                      <name>sys.Sys</name>
+                                      <node reference="../.."/>
+                                      <outer-class reference="../../../../../../../../../../../.."/>
+                                    </loggerRef>
+                                    <parent reference="../../../.."/>
+                                  </java.util.logging.LogManager_-LogNode>
+                                </entry>
+                              </children>
+                              <parent>
+                                <children>
+                                  <entry>
+                                    <string>sys</string>
+                                    <java.util.logging.LogManager_-LogNode reference="../../../.."/>
+                                  </entry>
+                                  <entry>
+                                    <string>umontreal</string>
+                                    <java.util.logging.LogManager_-LogNode>
+                                      <children>
+                                        <entry>
+                                          <string>iro</string>
+                                          <java.util.logging.LogManager_-LogNode>
+                                            <children>
+                                              <entry>
+                                                <string>lecuyer</string>
+                                                <java.util.logging.LogManager_-LogNode>
+                                                  <children>
+                                                    <entry>
+                                                      <string>stat</string>
+                                                      <java.util.logging.LogManager_-LogNode>
+                                                        <loggerRef>
+                                                          <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../../../../../../../.."/>
+                                                          <queue reference="../../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                          <name>umontreal.iro.lecuyer.stat</name>
+                                                          <node reference="../.."/>
+                                                          <outer-class reference="../../../../../../../../../../../../../../../../../../../../../.."/>
+                                                        </loggerRef>
+                                                        <parent reference="../../../.."/>
+                                                      </java.util.logging.LogManager_-LogNode>
+                                                    </entry>
+                                                  </children>
+                                                  <parent reference="../../../.."/>
+                                                </java.util.logging.LogManager_-LogNode>
+                                              </entry>
+                                            </children>
+                                            <parent reference="../../../.."/>
+                                          </java.util.logging.LogManager_-LogNode>
+                                        </entry>
+                                      </children>
+                                      <parent reference="../../../.."/>
+                                    </java.util.logging.LogManager_-LogNode>
+                                  </entry>
+                                  <entry>
+                                    <string>global</string>
+                                    <java.util.logging.LogManager_-LogNode>
+                                      <loggerRef>
+                                        <referent class="java.util.logging.Logger" reference="../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/referent"/>
+                                        <queue reference="../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                        <name>global</name>
+                                        <node reference="../.."/>
+                                        <outer-class reference="../../../../../../../../../../../../.."/>
+                                      </loggerRef>
+                                      <parent reference="../../../.."/>
+                                    </java.util.logging.LogManager_-LogNode>
+                                  </entry>
+                                  <entry>
+                                    <string>sun</string>
+                                    <java.util.logging.LogManager_-LogNode>
+                                      <children>
+                                        <entry>
+                                          <string>awt</string>
+                                          <java.util.logging.LogManager_-LogNode>
+                                            <children>
+                                              <entry>
+                                                <string>SunToolkit</string>
+                                                <java.util.logging.LogManager_-LogNode>
+                                                  <loggerRef>
+                                                    <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[14]/referent"/>
+                                                    <queue reference="../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                    <name>sun.awt.SunToolkit</name>
+                                                    <node reference="../.."/>
+                                                    <outer-class reference="../../../../../../../../../../../../../../../../../../.."/>
+                                                  </loggerRef>
+                                                  <parent reference="../../../.."/>
+                                                </java.util.logging.LogManager_-LogNode>
+                                              </entry>
+                                              <entry>
+                                                <string>AppContext</string>
+                                                <java.util.logging.LogManager_-LogNode>
+                                                  <loggerRef>
+                                                    <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[15]/referent"/>
+                                                    <queue reference="../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                    <name>sun.awt.AppContext</name>
+                                                    <node reference="../.."/>
+                                                    <outer-class reference="../../../../../../../../../../../../../../../../../../.."/>
+                                                  </loggerRef>
+                                                  <parent reference="../../../.."/>
+                                                </java.util.logging.LogManager_-LogNode>
+                                              </entry>
+                                            </children>
+                                            <parent reference="../../../.."/>
+                                          </java.util.logging.LogManager_-LogNode>
+                                        </entry>
+                                      </children>
+                                      <parent reference="../../../.."/>
+                                    </java.util.logging.LogManager_-LogNode>
+                                  </entry>
+                                </children>
+                                <loggerRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../../../../../referent/parent/parent"/>
+                                  <queue reference="../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                  <name></name>
+                                  <node reference="../.."/>
+                                  <outer-class reference="../../../../../../../../../.."/>
+                                </loggerRef>
+                              </parent>
+                            </parent>
+                          </parent>
+                        </parent>
+                      </node>
+                      <outer-class reference="../../../.."/>
+                    </java.util.logging.LogManager_-LoggerWeakRef>
+                  </entry>
+                  <entry>
+                    <string>sys.dht.catadupa.SeedDB</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/children/entry/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.rpc</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.dht.discovery.Discovery</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/children/entry[3]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.scheduler.RT_Scheduler</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[2]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.net.impl.KryoSerializer</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry[3]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.net.impl.providers.nio.TcpEndpoint</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sun.awt.SunToolkit</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.dht</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.scheduler.VT_Scheduler</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[2]/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.net.impl.rpc.RpcFactoryImpl</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.net.impl.providers.KryoOutputBuffer</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/children/entry[3]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sun.awt.AppContext</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>global</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/parent/children/entry[3]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.dht.catadupa.CatadupaNode</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/children/entry/java.util.logging.LogManager_-LogNode/children/entry[3]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.net.impl.providers.KryoInputBuffer</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>umontreal.iro.lecuyer.stat</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/parent/children/entry[2]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.Sys</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[5]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.dht.catadupa</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.dht.catadupa.DB</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/children/entry/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.dht.impl.DHT_NodeImpl</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/children/entry[2]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.net.impl.rpc.RpcPacket</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string></string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/parent/loggerRef"/>
+                  </entry>
+                </namedLoggers>
+                <root reference="../namedLoggers/entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/parent"/>
+                <rootLogger class="java.util.logging.LogManager$RootLogger" reference="../namedLoggers/entry/java.util.logging.LogManager_-LoggerWeakRef/referent/parent/parent"/>
+                <readPrimordialConfiguration>true</readPrimordialConfiguration>
+                <initializedGlobalHandlers>true</initializedGlobalHandlers>
+                <deathImminent>false</deathImminent>
+                <loggerRefQueue reference="../namedLoggers/entry/java.util.logging.LogManager_-LoggerWeakRef/referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                <ourPermission class="java.util.logging.LoggingPermission" serialization="custom">
+                  <java.security.Permission>
+                    <default>
+                      <name>control</name>
+                    </default>
+                  </java.security.Permission>
+                  <java.security.BasicPermission>
+                    <default/>
+                  </java.security.BasicPermission>
+                </ourPermission>
+              </manager>
+              <name>umontreal.iro.lecuyer.stat</name>
+              <useParentHandlers>true</useParentHandlers>
+              <anonymous>false</anonymous>
+              <parent class="java.util.logging.LogManager$RootLogger" reference="../manager/namedLoggers/entry/java.util.logging.LogManager_-LoggerWeakRef/referent/parent/parent"/>
+              <levelValue>800</levelValue>
+            </log>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+        </bins>
+      </sys.stats.BinnedTally>
+    </entry>
+    <entry>
+      <string>sys.dht.impl.msgs.DHT_RequestReply</string>
+      <sys.stats.BinnedTally>
+        <name></name>
+        <binSize>60.0</binSize>
+        <bins>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>110.0</maxValue>
+            <minValue>100.0</minValue>
+            <sumValue>728.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>7</numObs>
+            <sumSquares>75862.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>104.0</curAverage>
+            <curSum2>150.00000000000003</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+        </bins>
+      </sys.stats.BinnedTally>
+    </entry>
+    <entry>
+      <string>sys.dht.catadupa.msgs.JoinRequestAccept</string>
+      <sys.stats.BinnedTally>
+        <name></name>
+        <binSize>60.0</binSize>
+        <bins>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>22.0</maxValue>
+            <minValue>22.0</minValue>
+            <sumValue>22.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>1</numObs>
+            <sumSquares>484.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>22.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+        </bins>
+      </sys.stats.BinnedTally>
+    </entry>
+    <entry>
+      <string>titan.sys.messages.rpc.DataDelivery</string>
+      <sys.stats.BinnedTally>
+        <name></name>
+        <binSize>60.0</binSize>
+        <bins>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>885682.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>9370359.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>662</numObs>
+            <sumSquares>3.559500718483E12</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>14154.620845921465</curAverage>
+            <curSum2>3.4268668396478345E12</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>2118970.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>1.0384268E7</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>230</numObs>
+            <sumSquares>1.0442310666856E13</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>45148.991304347815</curAverage>
+            <curSum2>9.97347144122198E12</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>2138430.0</maxValue>
+            <minValue>134.0</minValue>
+            <sumValue>7565475.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>55</numObs>
+            <sumSquares>1.3554868121887E13</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>137554.0909090909</curAverage>
+            <curSum2>1.2514206085966543E13</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>1572670.0</maxValue>
+            <minValue>134.0</minValue>
+            <sumValue>5624059.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>51</numObs>
+            <sumSquares>5.274508425257E12</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>110275.66666666666</curAverage>
+            <curSum2>4.654311569659333E12</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>1595057.0</maxValue>
+            <minValue>134.0</minValue>
+            <sumValue>4319720.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>30</numObs>
+            <sumSquares>5.441098353076E12</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>143990.6666666667</curAverage>
+            <curSum2>4.819098990462665E12</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>620286.0</maxValue>
+            <minValue>134.0</minValue>
+            <sumValue>5229629.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>104</numObs>
+            <sumSquares>1.406894585155E12</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>50284.89423076924</curAverage>
+            <curSum2>1.1439232440238362E12</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>88066.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>3226449.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>111</numObs>
+            <sumSquares>1.29767939159E11</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>29067.10810810811</curAverage>
+            <curSum2>3.5984397270702705E10</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>128217.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>7171997.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>374</numObs>
+            <sumSquares>2.53890168693E11</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>19176.46256684492</curAverage>
+            <curSum2>1.1635663669297592E11</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>52741.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>5225763.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>431</numObs>
+            <sumSquares>1.32910348389E11</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>12124.740139211135</curAverage>
+            <curSum2>6.954932998489558E10</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>45788.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>5174806.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>717</numObs>
+            <sumSquares>1.1326643938E11</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>7217.302649930266</curAverage>
+            <curSum2>7.591829832332494E10</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>44361.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>3228146.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>327</numObs>
+            <sumSquares>8.3903779614E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>9872.006116207942</curAverage>
+            <curSum2>5.203550255798776E10</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>41684.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>2226778.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>275</numObs>
+            <sumSquares>5.3176094254E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>8097.374545454548</curAverage>
+            <curSum2>3.514503875842181E10</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>40216.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>2897926.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>281</numObs>
+            <sumSquares>7.4935205914E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>10312.903914590752</curAverage>
+            <curSum2>4.5049173524405685E10</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>52163.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>4773778.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>524</numObs>
+            <sumSquares>1.22844956032E11</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>9110.263358778633</curAverage>
+            <curSum2>7.935458123565651E10</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>46603.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>5683656.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>554</numObs>
+            <sumSquares>1.49350169322E11</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>10259.306859205766</curAverage>
+            <curSum2>9.103979833583397E10</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>70196.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>8435003.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>677</numObs>
+            <sumSquares>2.48346754297E11</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>12459.384047267353</curAverage>
+            <curSum2>1.432518124801476E11</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>67712.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>9943701.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>978</numObs>
+            <sumSquares>2.60532245289E11</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>10167.3834355828</curAverage>
+            <curSum2>1.594308244532116E11</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>42367.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>6029863.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>501</numObs>
+            <sumSquares>1.70314057859E11</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>12035.654690618774</curAverage>
+            <curSum2>9.774070895926141E10</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>44831.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>6244286.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>558</numObs>
+            <sumSquares>1.70878584242E11</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>11190.476702508966</curAverage>
+            <curSum2>1.0100204723519714E11</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>70008.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>5629812.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>410</numObs>
+            <sumSquares>1.68921272832E11</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>13731.248780487795</curAverage>
+            <curSum2>9.161692367262456E10</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>82515.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>6770055.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>541</numObs>
+            <sumSquares>2.02897082185E11</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>12513.964879852127</curAverage>
+            <curSum2>1.1817685168033275E11</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>44362.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>3204623.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>155</numObs>
+            <sumSquares>1.06422018819E11</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>20674.987096774203</curAverage>
+            <curSum2>4.016647964397418E10</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>14987.0</maxValue>
+            <minValue>14987.0</minValue>
+            <sumValue>14987.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>1</numObs>
+            <sumSquares>2.24610169E8</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>14987.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+        </bins>
+      </sys.stats.BinnedTally>
+    </entry>
+    <entry>
+      <string>titan.sys.messages.rpc.RpcReply</string>
+      <sys.stats.BinnedTally>
+        <name></name>
+        <binSize>60.0</binSize>
+        <bins>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>32120.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>584</numObs>
+            <sumSquares>1766600.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>12320.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>224</numObs>
+            <sumSquares>677600.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>2805.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>51</numObs>
+            <sumSquares>154275.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>1485.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>27</numObs>
+            <sumSquares>81675.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>1265.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>23</numObs>
+            <sumSquares>69575.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>2805.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>51</numObs>
+            <sumSquares>154275.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>2695.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>49</numObs>
+            <sumSquares>148225.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>14520.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>264</numObs>
+            <sumSquares>798600.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>19855.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>361</numObs>
+            <sumSquares>1092025.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>34155.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>621</numObs>
+            <sumSquares>1878525.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>14245.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>259</numObs>
+            <sumSquares>783475.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>12045.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>219</numObs>
+            <sumSquares>662475.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>12430.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>226</numObs>
+            <sumSquares>683650.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>23100.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>420</numObs>
+            <sumSquares>1270500.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>23595.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>429</numObs>
+            <sumSquares>1297725.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>26895.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>489</numObs>
+            <sumSquares>1479225.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>43010.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>782</numObs>
+            <sumSquares>2365550.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>19470.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>354</numObs>
+            <sumSquares>1070850.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>22935.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>417</numObs>
+            <sumSquares>1261425.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>14245.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>259</numObs>
+            <sumSquares>783475.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>20295.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>369</numObs>
+            <sumSquares>1116225.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55.0</maxValue>
+            <minValue>55.0</minValue>
+            <sumValue>3740.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>68</numObs>
+            <sumSquares>205700.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>55.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+        </bins>
+      </sys.stats.BinnedTally>
+    </entry>
+    <entry>
+      <string>sys.dht.impl.msgs.DHT_Request</string>
+      <sys.stats.BinnedTally>
+        <name></name>
+        <binSize>60.0</binSize>
+        <bins>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>435.0</maxValue>
+            <minValue>117.0</minValue>
+            <sumValue>4150.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>17</numObs>
+            <sumSquares>1216704.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>244.11764705882354</curAverage>
+            <curSum2>203615.7647058823</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+        </bins>
+      </sys.stats.BinnedTally>
+    </entry>
+    <entry>
+      <string>sys.dht.catadupa.msgs.JoinRequest</string>
+      <sys.stats.BinnedTally>
+        <name></name>
+        <binSize>60.0</binSize>
+        <bins>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>44.0</maxValue>
+            <minValue>44.0</minValue>
+            <sumValue>44.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>1</numObs>
+            <sumSquares>1936.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>44.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+        </bins>
+      </sys.stats.BinnedTally>
+    </entry>
+  </inMsgTraffic>
+  <outMsgTraffic>
+    <entry>
+      <string>titan.sys.messages.rpc.TriggerDelivery</string>
+      <sys.stats.BinnedTally>
+        <name></name>
+        <binSize>60.0</binSize>
+        <bins>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>366.0</maxValue>
+            <minValue>324.0</minValue>
+            <sumValue>2112.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>6</numObs>
+            <sumSquares>745776.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>352.0</curAverage>
+            <curSum2>2352.0000000000014</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+        </bins>
+      </sys.stats.BinnedTally>
+    </entry>
+    <entry>
+      <string>titan.sys.messages.rpc.DataDelivery</string>
+      <sys.stats.BinnedTally>
+        <name></name>
+        <binSize>60.0</binSize>
+        <bins>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55499.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>2258415.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>579</numObs>
+            <sumSquares>3.0825783237E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>3900.5440414507766</curAverage>
+            <curSum2>2.2016736065626945E10</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>67472.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>3064457.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>228</numObs>
+            <sumSquares>8.7284337847E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>13440.600877192981</curAverage>
+            <curSum2>4.6096194404679825E10</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>79312.0</maxValue>
+            <minValue>134.0</minValue>
+            <sumValue>1319109.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>62</numObs>
+            <sumSquares>5.6948110549E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>21275.951612903227</curAverage>
+            <curSum2>2.8882811292854836E10</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>55754.0</maxValue>
+            <minValue>134.0</minValue>
+            <sumValue>1008774.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>73</numObs>
+            <sumSquares>2.960512906E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>13818.821917808216</curAverage>
+            <curSum2>1.5665060798684933E10</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>84270.0</maxValue>
+            <minValue>134.0</minValue>
+            <sumValue>1363320.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>58</numObs>
+            <sumSquares>5.979592241E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>23505.51724137931</curAverage>
+            <curSum2>2.7750380644482758E10</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>88066.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>2525519.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>192</numObs>
+            <sumSquares>7.6223600431E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>13153.744791666666</curAverage>
+            <curSum2>4.300356803849476E10</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>128217.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>1332515.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>72</numObs>
+            <sumSquares>6.3241875593E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>18507.152777777785</curAverage>
+            <curSum2>3.858081690931947E10</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>52741.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>2691118.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>293</numObs>
+            <sumSquares>5.7953515704E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>9184.703071672353</curAverage>
+            <curSum2>3.3236395943167236E10</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>12305.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>1015504.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>239</numObs>
+            <sumSquares>7.16083647E9</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>4248.9707112970755</curAverage>
+            <curSum2>2.845989716794979E9</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>10863.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>1496421.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>453</numObs>
+            <sumSquares>8.153421683E9</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>3303.35761589404</curAverage>
+            <curSum2>3.2102079760662246E9</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>10163.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>1005115.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>263</numObs>
+            <sumSquares>5.970688519E9</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>3821.7300380228135</curAverage>
+            <curSum2>2.1294103318327005E9</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>9546.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>751637.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>225</numObs>
+            <sumSquares>4.150364479E9</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>3340.60888888889</curAverage>
+            <curSum2>1.6394392355822227E9</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>9858.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>921405.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>224</numObs>
+            <sumSquares>5.584693117E9</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>4113.415178571428</curAverage>
+            <curSum2>1.7945718043883927E9</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>12361.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>1532976.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>422</numObs>
+            <sumSquares>9.470814716E9</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>3632.644549763034</curAverage>
+            <curSum2>3.9020578046824636E9</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>16232.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>1830640.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>445</numObs>
+            <sumSquares>1.2285184282E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>4113.797752808992</curAverage>
+            <curSum2>4.754301563797754E9</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>19644.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>2881084.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>600</numObs>
+            <sumSquares>2.3278111464E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>4801.8066666666655</curAverage>
+            <curSum2>9.443703105573338E9</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>19843.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>3086525.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>713</numObs>
+            <sumSquares>2.2292287115E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>4328.927068723695</curAverage>
+            <curSum2>8.930945494207573E9</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>11187.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>2215306.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>582</numObs>
+            <sumSquares>1.2998007656E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>3806.3676975945014</curAverage>
+            <curSum2>4.565738457312717E9</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>12102.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>2259942.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>564</numObs>
+            <sumSquares>1.3528522126E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>4006.9893617021276</curAverage>
+            <curSum2>4.472958573936169E9</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>15705.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>2231567.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>552</numObs>
+            <sumSquares>1.3864786139E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>4042.6938405797114</curAverage>
+            <curSum2>4.843243973259059E9</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>20286.0</maxValue>
+            <minValue>130.0</minValue>
+            <sumValue>2351306.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>584</numObs>
+            <sumSquares>1.510286307E10</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>4026.20890410959</curAverage>
+            <curSum2>5.6360139165137E9</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>39262.0</maxValue>
+            <minValue>133.0</minValue>
+            <sumValue>372723.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>54</numObs>
+            <sumSquares>5.571257431E9</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>6902.277777777778</curAverage>
+            <curSum2>2.998619750833334E9</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>-Infinity</maxValue>
+            <minValue>Infinity</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>0</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>37217.0</maxValue>
+            <minValue>37217.0</minValue>
+            <sumValue>37217.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>1</numObs>
+            <sumSquares>1.385105089E9</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>37217.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+        </bins>
+      </sys.stats.BinnedTally>
+    </entry>
+    <entry>
+      <string>sys.dht.impl.msgs.DHT_Request</string>
+      <sys.stats.BinnedTally>
+        <name></name>
+        <binSize>60.0</binSize>
+        <bins>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>187.0</maxValue>
+            <minValue>167.0</minValue>
+            <sumValue>1229.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>7</numObs>
+            <sumSquares>216463.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>175.57142857142856</curAverage>
+            <curSum2>685.714285714286</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+        </bins>
+      </sys.stats.BinnedTally>
+    </entry>
+    <entry>
+      <string>sys.dht.catadupa.msgs.JoinRequest</string>
+      <sys.stats.BinnedTally>
+        <name></name>
+        <binSize>60.0</binSize>
+        <bins>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>44.0</maxValue>
+            <minValue>44.0</minValue>
+            <sumValue>44.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>1</numObs>
+            <sumSquares>1936.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>44.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+        </bins>
+      </sys.stats.BinnedTally>
+    </entry>
+  </outMsgTraffic>
+  <rpcExecTime/>
+</sys.stats.RpcStats>

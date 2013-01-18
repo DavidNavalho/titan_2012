@@ -1,0 +1,902 @@
+<sys.stats.RpcStats>
+  <T0>1.746596864</T0>
+  <rpcRTT/>
+  <inMsgTraffic>
+    <entry>
+      <string>sys.dht.impl.msgs.DHT_RequestReply</string>
+      <sys.stats.BinnedTally>
+        <name></name>
+        <binSize>60.0</binSize>
+        <bins>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>319.0</maxValue>
+            <minValue>73.0</minValue>
+            <sumValue>996.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>5</numObs>
+            <sumSquares>253712.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>199.2</curAverage>
+            <curSum2>55308.79999999999</curSum2>
+            <log>
+              <manager>
+                <props>
+                  <property name="java.util.logging.FileHandler.level" value="ALL"/>
+                  <property name="handlers" value="java.util.logging.FileHandler,java.util.logging.ConsoleHandler"/>
+                  <property name="java.util.logging.ConsoleHandler.level" value="ALL"/>
+                  <property name="java.util.logging.ConsoleHandler.formatter" value="java.util.logging.SimpleFormatter"/>
+                  <property name=".level" value="OFF"/>
+                </props>
+                <changes serialization="custom">
+                  <java.beans.PropertyChangeSupport>
+                    <default>
+                      <propertyChangeSupportSerializedDataVersion>2</propertyChangeSupportSerializedDataVersion>
+                      <source class="java-class">java.util.logging.LogManager</source>
+                    </default>
+                    <null/>
+                  </java.beans.PropertyChangeSupport>
+                </changes>
+                <namedLoggers>
+                  <entry>
+                    <string>sys.dht.impl.DHT_ClientStub</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef>
+                      <referent class="java.util.logging.Logger">
+                        <manager reference="../../../../.."/>
+                        <name>sys.dht.impl.DHT_ClientStub</name>
+                        <useParentHandlers>true</useParentHandlers>
+                        <anonymous>false</anonymous>
+                        <parent>
+                          <manager reference="../../../../../.."/>
+                          <name>sys.dht</name>
+                          <useParentHandlers>true</useParentHandlers>
+                          <anonymous>false</anonymous>
+                          <parent class="java.util.logging.LogManager$RootLogger">
+                            <manager reference="../../../../../../.."/>
+                            <name></name>
+                            <useParentHandlers>true</useParentHandlers>
+                            <anonymous>false</anonymous>
+                            <kids>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>global</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>2147483647</levelValue>
+                                </referent>
+                                <queue>
+                                  <lock/>
+                                  <queueLength>0</queueLength>
+                                </queue>
+                                <name>global</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null">
+                                    <lock/>
+                                    <queueLength>0</queueLength>
+                                  </queue>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.Sys</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>2147483647</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.Sys</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.scheduler.VT_Scheduler</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>2147483647</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.scheduler.VT_Scheduler</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.scheduler.RT_Scheduler</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>2147483647</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.scheduler.RT_Scheduler</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.net.impl.rpc.RpcPacket</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>2147483647</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.net.impl.rpc.RpcPacket</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger" reference="../../../.."/>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.dht</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.net.impl.KryoSerializer</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>2147483647</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.net.impl.KryoSerializer</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.net.impl.providers.KryoInputBuffer</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>2147483647</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.net.impl.providers.KryoInputBuffer</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.net.impl.providers.KryoOutputBuffer</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>2147483647</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.net.impl.providers.KryoOutputBuffer</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.net.impl.rpc.RpcFactoryImpl</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>2147483647</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.net.impl.rpc.RpcFactoryImpl</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.net.impl.providers.nio.TcpEndpoint</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>2147483647</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.net.impl.providers.nio.TcpEndpoint</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sys.rpc</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>2147483647</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sys.rpc</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger" reference="../../../../../../../../../.."/>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>umontreal.iro.lecuyer.stat</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sun.awt.SunToolkit</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>2147483647</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sun.awt.SunToolkit</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                              <java.util.logging.LogManager_-LoggerWeakRef>
+                                <referent class="java.util.logging.Logger">
+                                  <manager reference="../../../../../../../../../.."/>
+                                  <name>sun.awt.AppContext</name>
+                                  <useParentHandlers>true</useParentHandlers>
+                                  <anonymous>false</anonymous>
+                                  <parent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <levelValue>2147483647</levelValue>
+                                </referent>
+                                <queue reference="../../java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                <name>sun.awt.AppContext</name>
+                                <parentRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../.."/>
+                                  <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                                </parentRef>
+                                <outer-class reference="../../../../../../../../.."/>
+                              </java.util.logging.LogManager_-LoggerWeakRef>
+                            </kids>
+                            <levelObject>
+                              <name>OFF</name>
+                              <value>2147483647</value>
+                              <resourceBundleName>sun.util.logging.resources.logging</resourceBundleName>
+                            </levelObject>
+                            <levelValue>2147483647</levelValue>
+                            <outer-class reference="../../../../../../.."/>
+                          </parent>
+                          <kids>
+                            <java.util.logging.LogManager_-LoggerWeakRef>
+                              <referent class="java.util.logging.Logger">
+                                <manager reference="../../../../../../../../.."/>
+                                <name>sys.dht.catadupa.CatadupaNode</name>
+                                <useParentHandlers>true</useParentHandlers>
+                                <anonymous>false</anonymous>
+                                <parent reference="../../../.."/>
+                                <levelValue>2147483647</levelValue>
+                              </referent>
+                              <queue reference="../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                              <name>sys.dht.catadupa.CatadupaNode</name>
+                              <parentRef>
+                                <referent class="java.util.logging.Logger" reference="../../../.."/>
+                                <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                              </parentRef>
+                              <outer-class reference="../../../../../../../.."/>
+                            </java.util.logging.LogManager_-LoggerWeakRef>
+                            <java.util.logging.LogManager_-LoggerWeakRef>
+                              <referent class="java.util.logging.Logger">
+                                <manager reference="../../../../../../../../.."/>
+                                <name>sys.dht.impl.DHT_NodeImpl</name>
+                                <useParentHandlers>true</useParentHandlers>
+                                <anonymous>false</anonymous>
+                                <parent reference="../../../.."/>
+                                <levelValue>2147483647</levelValue>
+                              </referent>
+                              <queue reference="../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                              <name>sys.dht.impl.DHT_NodeImpl</name>
+                              <parentRef>
+                                <referent class="java.util.logging.Logger" reference="../../../.."/>
+                                <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                              </parentRef>
+                              <outer-class reference="../../../../../../../.."/>
+                            </java.util.logging.LogManager_-LoggerWeakRef>
+                            <java.util.logging.LogManager_-LoggerWeakRef>
+                              <referent class="java.util.logging.Logger">
+                                <manager reference="../../../../../../../../.."/>
+                                <name>sys.dht.discovery.Discovery</name>
+                                <useParentHandlers>true</useParentHandlers>
+                                <anonymous>false</anonymous>
+                                <parent reference="../../../.."/>
+                                <levelValue>2147483647</levelValue>
+                              </referent>
+                              <queue reference="../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                              <name>sys.dht.discovery.Discovery</name>
+                              <parentRef>
+                                <referent class="java.util.logging.Logger" reference="../../../.."/>
+                                <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                              </parentRef>
+                              <outer-class reference="../../../../../../../.."/>
+                            </java.util.logging.LogManager_-LoggerWeakRef>
+                            <java.util.logging.LogManager_-LoggerWeakRef>
+                              <referent class="java.util.logging.Logger" reference="../../../.."/>
+                              <queue reference="../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                              <name>sys.dht.impl.DHT_ClientStub</name>
+                              <parentRef>
+                                <referent class="java.util.logging.Logger" reference="../../../.."/>
+                                <queue class="java.lang.ref.ReferenceQueue$Null" reference="../../../../parent/kids/java.util.logging.LogManager_-LoggerWeakRef/parentRef/queue"/>
+                              </parentRef>
+                              <outer-class reference="../../../../../../../.."/>
+                            </java.util.logging.LogManager_-LoggerWeakRef>
+                          </kids>
+                          <levelValue>2147483647</levelValue>
+                        </parent>
+                        <levelValue>2147483647</levelValue>
+                      </referent>
+                      <queue reference="../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                      <name>sys.dht.impl.DHT_ClientStub</name>
+                      <node>
+                        <loggerRef reference="../.."/>
+                        <parent>
+                          <children>
+                            <entry>
+                              <string>DHT_ClientStub</string>
+                              <java.util.logging.LogManager_-LogNode reference="../../../.."/>
+                            </entry>
+                            <entry>
+                              <string>DHT_NodeImpl</string>
+                              <java.util.logging.LogManager_-LogNode>
+                                <loggerRef>
+                                  <referent class="java.util.logging.Logger" reference="../../../../../../../referent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[2]/referent"/>
+                                  <queue reference="../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                  <name>sys.dht.impl.DHT_NodeImpl</name>
+                                  <node reference="../.."/>
+                                  <outer-class reference="../../../../../../../../../.."/>
+                                </loggerRef>
+                                <parent reference="../../../.."/>
+                              </java.util.logging.LogManager_-LogNode>
+                            </entry>
+                          </children>
+                          <parent>
+                            <children>
+                              <entry>
+                                <string>catadupa</string>
+                                <java.util.logging.LogManager_-LogNode>
+                                  <children>
+                                    <entry>
+                                      <string>CatadupaNode</string>
+                                      <java.util.logging.LogManager_-LogNode>
+                                        <loggerRef>
+                                          <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../referent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/referent"/>
+                                          <queue reference="../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                          <name>sys.dht.catadupa.CatadupaNode</name>
+                                          <node reference="../.."/>
+                                          <outer-class reference="../../../../../../../../../../../../../.."/>
+                                        </loggerRef>
+                                        <parent reference="../../../.."/>
+                                      </java.util.logging.LogManager_-LogNode>
+                                    </entry>
+                                  </children>
+                                  <parent reference="../../../.."/>
+                                </java.util.logging.LogManager_-LogNode>
+                              </entry>
+                              <entry>
+                                <string>impl</string>
+                                <java.util.logging.LogManager_-LogNode reference="../../../.."/>
+                              </entry>
+                              <entry>
+                                <string>discovery</string>
+                                <java.util.logging.LogManager_-LogNode>
+                                  <children>
+                                    <entry>
+                                      <string>Discovery</string>
+                                      <java.util.logging.LogManager_-LogNode>
+                                        <loggerRef>
+                                          <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../referent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[3]/referent"/>
+                                          <queue reference="../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                          <name>sys.dht.discovery.Discovery</name>
+                                          <node reference="../.."/>
+                                          <outer-class reference="../../../../../../../../../../../../../.."/>
+                                        </loggerRef>
+                                        <parent reference="../../../.."/>
+                                      </java.util.logging.LogManager_-LogNode>
+                                    </entry>
+                                  </children>
+                                  <parent reference="../../../.."/>
+                                </java.util.logging.LogManager_-LogNode>
+                              </entry>
+                            </children>
+                            <loggerRef>
+                              <referent class="java.util.logging.Logger" reference="../../../../../referent/parent"/>
+                              <queue reference="../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                              <name>sys.dht</name>
+                              <node reference="../.."/>
+                              <outer-class reference="../../../../../../../.."/>
+                            </loggerRef>
+                            <parent>
+                              <children>
+                                <entry>
+                                  <string>rpc</string>
+                                  <java.util.logging.LogManager_-LogNode>
+                                    <loggerRef>
+                                      <referent class="java.util.logging.Logger" reference="../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[12]/referent"/>
+                                      <queue reference="../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                      <name>sys.rpc</name>
+                                      <node reference="../.."/>
+                                      <outer-class reference="../../../../../../../../../../../.."/>
+                                    </loggerRef>
+                                    <parent reference="../../../.."/>
+                                  </java.util.logging.LogManager_-LogNode>
+                                </entry>
+                                <entry>
+                                  <string>scheduler</string>
+                                  <java.util.logging.LogManager_-LogNode>
+                                    <children>
+                                      <entry>
+                                        <string>RT_Scheduler</string>
+                                        <java.util.logging.LogManager_-LogNode>
+                                          <loggerRef>
+                                            <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[4]/referent"/>
+                                            <queue reference="../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                            <name>sys.scheduler.RT_Scheduler</name>
+                                            <node reference="../.."/>
+                                            <outer-class reference="../../../../../../../../../../../../../../.."/>
+                                          </loggerRef>
+                                          <parent reference="../../../.."/>
+                                        </java.util.logging.LogManager_-LogNode>
+                                      </entry>
+                                      <entry>
+                                        <string>VT_Scheduler</string>
+                                        <java.util.logging.LogManager_-LogNode>
+                                          <loggerRef>
+                                            <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[3]/referent"/>
+                                            <queue reference="../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                            <name>sys.scheduler.VT_Scheduler</name>
+                                            <node reference="../.."/>
+                                            <outer-class reference="../../../../../../../../../../../../../../.."/>
+                                          </loggerRef>
+                                          <parent reference="../../../.."/>
+                                        </java.util.logging.LogManager_-LogNode>
+                                      </entry>
+                                    </children>
+                                    <parent reference="../../../.."/>
+                                  </java.util.logging.LogManager_-LogNode>
+                                </entry>
+                                <entry>
+                                  <string>dht</string>
+                                  <java.util.logging.LogManager_-LogNode reference="../../../.."/>
+                                </entry>
+                                <entry>
+                                  <string>net</string>
+                                  <java.util.logging.LogManager_-LogNode>
+                                    <children>
+                                      <entry>
+                                        <string>impl</string>
+                                        <java.util.logging.LogManager_-LogNode>
+                                          <children>
+                                            <entry>
+                                              <string>rpc</string>
+                                              <java.util.logging.LogManager_-LogNode>
+                                                <children>
+                                                  <entry>
+                                                    <string>RpcFactoryImpl</string>
+                                                    <java.util.logging.LogManager_-LogNode>
+                                                      <loggerRef>
+                                                        <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[10]/referent"/>
+                                                        <queue reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                        <name>sys.net.impl.rpc.RpcFactoryImpl</name>
+                                                        <node reference="../.."/>
+                                                        <outer-class reference="../../../../../../../../../../../../../../../../../../../../.."/>
+                                                      </loggerRef>
+                                                      <parent reference="../../../.."/>
+                                                    </java.util.logging.LogManager_-LogNode>
+                                                  </entry>
+                                                  <entry>
+                                                    <string>RpcPacket</string>
+                                                    <java.util.logging.LogManager_-LogNode>
+                                                      <loggerRef>
+                                                        <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[5]/referent"/>
+                                                        <queue reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                        <name>sys.net.impl.rpc.RpcPacket</name>
+                                                        <node reference="../.."/>
+                                                        <outer-class reference="../../../../../../../../../../../../../../../../../../../../.."/>
+                                                      </loggerRef>
+                                                      <parent reference="../../../.."/>
+                                                    </java.util.logging.LogManager_-LogNode>
+                                                  </entry>
+                                                </children>
+                                                <parent reference="../../../.."/>
+                                              </java.util.logging.LogManager_-LogNode>
+                                            </entry>
+                                            <entry>
+                                              <string>providers</string>
+                                              <java.util.logging.LogManager_-LogNode>
+                                                <children>
+                                                  <entry>
+                                                    <string>KryoInputBuffer</string>
+                                                    <java.util.logging.LogManager_-LogNode>
+                                                      <loggerRef>
+                                                        <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[8]/referent"/>
+                                                        <queue reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                        <name>sys.net.impl.providers.KryoInputBuffer</name>
+                                                        <node reference="../.."/>
+                                                        <outer-class reference="../../../../../../../../../../../../../../../../../../../../.."/>
+                                                      </loggerRef>
+                                                      <parent reference="../../../.."/>
+                                                    </java.util.logging.LogManager_-LogNode>
+                                                  </entry>
+                                                  <entry>
+                                                    <string>nio</string>
+                                                    <java.util.logging.LogManager_-LogNode>
+                                                      <children>
+                                                        <entry>
+                                                          <string>TcpEndpoint</string>
+                                                          <java.util.logging.LogManager_-LogNode>
+                                                            <loggerRef>
+                                                              <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[11]/referent"/>
+                                                              <queue reference="../../../../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                              <name>sys.net.impl.providers.nio.TcpEndpoint</name>
+                                                              <node reference="../.."/>
+                                                              <outer-class reference="../../../../../../../../../../../../../../../../../../../../../../../.."/>
+                                                            </loggerRef>
+                                                            <parent reference="../../../.."/>
+                                                          </java.util.logging.LogManager_-LogNode>
+                                                        </entry>
+                                                      </children>
+                                                      <parent reference="../../../.."/>
+                                                    </java.util.logging.LogManager_-LogNode>
+                                                  </entry>
+                                                  <entry>
+                                                    <string>KryoOutputBuffer</string>
+                                                    <java.util.logging.LogManager_-LogNode>
+                                                      <loggerRef>
+                                                        <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[9]/referent"/>
+                                                        <queue reference="../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                        <name>sys.net.impl.providers.KryoOutputBuffer</name>
+                                                        <node reference="../.."/>
+                                                        <outer-class reference="../../../../../../../../../../../../../../../../../../../../.."/>
+                                                      </loggerRef>
+                                                      <parent reference="../../../.."/>
+                                                    </java.util.logging.LogManager_-LogNode>
+                                                  </entry>
+                                                </children>
+                                                <parent reference="../../../.."/>
+                                              </java.util.logging.LogManager_-LogNode>
+                                            </entry>
+                                            <entry>
+                                              <string>KryoSerializer</string>
+                                              <java.util.logging.LogManager_-LogNode>
+                                                <loggerRef>
+                                                  <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[7]/referent"/>
+                                                  <queue reference="../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                  <name>sys.net.impl.KryoSerializer</name>
+                                                  <node reference="../.."/>
+                                                  <outer-class reference="../../../../../../../../../../../../../../../../../.."/>
+                                                </loggerRef>
+                                                <parent reference="../../../.."/>
+                                              </java.util.logging.LogManager_-LogNode>
+                                            </entry>
+                                          </children>
+                                          <parent reference="../../../.."/>
+                                        </java.util.logging.LogManager_-LogNode>
+                                      </entry>
+                                    </children>
+                                    <parent reference="../../../.."/>
+                                  </java.util.logging.LogManager_-LogNode>
+                                </entry>
+                                <entry>
+                                  <string>Sys</string>
+                                  <java.util.logging.LogManager_-LogNode>
+                                    <loggerRef>
+                                      <referent class="java.util.logging.Logger" reference="../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[2]/referent"/>
+                                      <queue reference="../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                      <name>sys.Sys</name>
+                                      <node reference="../.."/>
+                                      <outer-class reference="../../../../../../../../../../../.."/>
+                                    </loggerRef>
+                                    <parent reference="../../../.."/>
+                                  </java.util.logging.LogManager_-LogNode>
+                                </entry>
+                              </children>
+                              <parent>
+                                <children>
+                                  <entry>
+                                    <string>sys</string>
+                                    <java.util.logging.LogManager_-LogNode reference="../../../.."/>
+                                  </entry>
+                                  <entry>
+                                    <string>umontreal</string>
+                                    <java.util.logging.LogManager_-LogNode>
+                                      <children>
+                                        <entry>
+                                          <string>iro</string>
+                                          <java.util.logging.LogManager_-LogNode>
+                                            <children>
+                                              <entry>
+                                                <string>lecuyer</string>
+                                                <java.util.logging.LogManager_-LogNode>
+                                                  <children>
+                                                    <entry>
+                                                      <string>stat</string>
+                                                      <java.util.logging.LogManager_-LogNode>
+                                                        <loggerRef>
+                                                          <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../../../../../../../.."/>
+                                                          <queue reference="../../../../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                          <name>umontreal.iro.lecuyer.stat</name>
+                                                          <node reference="../.."/>
+                                                          <outer-class reference="../../../../../../../../../../../../../../../../../../../../../.."/>
+                                                        </loggerRef>
+                                                        <parent reference="../../../.."/>
+                                                      </java.util.logging.LogManager_-LogNode>
+                                                    </entry>
+                                                  </children>
+                                                  <parent reference="../../../.."/>
+                                                </java.util.logging.LogManager_-LogNode>
+                                              </entry>
+                                            </children>
+                                            <parent reference="../../../.."/>
+                                          </java.util.logging.LogManager_-LogNode>
+                                        </entry>
+                                      </children>
+                                      <parent reference="../../../.."/>
+                                    </java.util.logging.LogManager_-LogNode>
+                                  </entry>
+                                  <entry>
+                                    <string>global</string>
+                                    <java.util.logging.LogManager_-LogNode>
+                                      <loggerRef>
+                                        <referent class="java.util.logging.Logger" reference="../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/referent"/>
+                                        <queue reference="../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                        <name>global</name>
+                                        <node reference="../.."/>
+                                        <outer-class reference="../../../../../../../../../../../../.."/>
+                                      </loggerRef>
+                                      <parent reference="../../../.."/>
+                                    </java.util.logging.LogManager_-LogNode>
+                                  </entry>
+                                  <entry>
+                                    <string>sun</string>
+                                    <java.util.logging.LogManager_-LogNode>
+                                      <children>
+                                        <entry>
+                                          <string>awt</string>
+                                          <java.util.logging.LogManager_-LogNode>
+                                            <children>
+                                              <entry>
+                                                <string>SunToolkit</string>
+                                                <java.util.logging.LogManager_-LogNode>
+                                                  <loggerRef>
+                                                    <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[14]/referent"/>
+                                                    <queue reference="../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                    <name>sun.awt.SunToolkit</name>
+                                                    <node reference="../.."/>
+                                                    <outer-class reference="../../../../../../../../../../../../../../../../../../.."/>
+                                                  </loggerRef>
+                                                  <parent reference="../../../.."/>
+                                                </java.util.logging.LogManager_-LogNode>
+                                              </entry>
+                                              <entry>
+                                                <string>AppContext</string>
+                                                <java.util.logging.LogManager_-LogNode>
+                                                  <loggerRef>
+                                                    <referent class="java.util.logging.Logger" reference="../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef[15]/referent"/>
+                                                    <queue reference="../../../../../../../../../../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                                    <name>sun.awt.AppContext</name>
+                                                    <node reference="../.."/>
+                                                    <outer-class reference="../../../../../../../../../../../../../../../../../../.."/>
+                                                  </loggerRef>
+                                                  <parent reference="../../../.."/>
+                                                </java.util.logging.LogManager_-LogNode>
+                                              </entry>
+                                            </children>
+                                            <parent reference="../../../.."/>
+                                          </java.util.logging.LogManager_-LogNode>
+                                        </entry>
+                                      </children>
+                                      <parent reference="../../../.."/>
+                                    </java.util.logging.LogManager_-LogNode>
+                                  </entry>
+                                </children>
+                                <loggerRef>
+                                  <referent class="java.util.logging.LogManager$RootLogger" reference="../../../../../../../referent/parent/parent"/>
+                                  <queue reference="../../../../../../../referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                                  <name></name>
+                                  <node reference="../.."/>
+                                  <outer-class reference="../../../../../../../../../.."/>
+                                </loggerRef>
+                              </parent>
+                            </parent>
+                          </parent>
+                        </parent>
+                      </node>
+                      <outer-class reference="../../../.."/>
+                    </java.util.logging.LogManager_-LoggerWeakRef>
+                  </entry>
+                  <entry>
+                    <string>sys.rpc</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.dht.discovery.Discovery</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/children/entry[3]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.scheduler.RT_Scheduler</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[2]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.net.impl.KryoSerializer</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry[3]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.net.impl.providers.nio.TcpEndpoint</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sun.awt.SunToolkit</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.dht</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.scheduler.VT_Scheduler</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[2]/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.net.impl.rpc.RpcFactoryImpl</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.net.impl.providers.KryoOutputBuffer</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/children/entry[3]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sun.awt.AppContext</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>global</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/parent/children/entry[3]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.dht.catadupa.CatadupaNode</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/children/entry/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.net.impl.providers.KryoInputBuffer</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>umontreal.iro.lecuyer.stat</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/parent/children/entry[2]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.Sys</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[5]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.dht.impl.DHT_NodeImpl</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/children/entry[2]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string>sys.net.impl.rpc.RpcPacket</string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/children/entry[4]/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry/java.util.logging.LogManager_-LogNode/children/entry[2]/java.util.logging.LogManager_-LogNode/loggerRef"/>
+                  </entry>
+                  <entry>
+                    <string></string>
+                    <java.util.logging.LogManager_-LoggerWeakRef reference="../../entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/parent/loggerRef"/>
+                  </entry>
+                </namedLoggers>
+                <root reference="../namedLoggers/entry/java.util.logging.LogManager_-LoggerWeakRef/node/parent/parent/parent/parent"/>
+                <rootLogger class="java.util.logging.LogManager$RootLogger" reference="../namedLoggers/entry/java.util.logging.LogManager_-LoggerWeakRef/referent/parent/parent"/>
+                <readPrimordialConfiguration>true</readPrimordialConfiguration>
+                <initializedGlobalHandlers>false</initializedGlobalHandlers>
+                <deathImminent>false</deathImminent>
+                <loggerRefQueue reference="../namedLoggers/entry/java.util.logging.LogManager_-LoggerWeakRef/referent/parent/parent/kids/java.util.logging.LogManager_-LoggerWeakRef/queue"/>
+                <ourPermission class="java.util.logging.LoggingPermission" serialization="custom">
+                  <java.security.Permission>
+                    <default>
+                      <name>control</name>
+                    </default>
+                  </java.security.Permission>
+                  <java.security.BasicPermission>
+                    <default/>
+                  </java.security.BasicPermission>
+                </ourPermission>
+              </manager>
+              <name>umontreal.iro.lecuyer.stat</name>
+              <useParentHandlers>true</useParentHandlers>
+              <anonymous>false</anonymous>
+              <parent class="java.util.logging.LogManager$RootLogger" reference="../manager/namedLoggers/entry/java.util.logging.LogManager_-LoggerWeakRef/referent/parent/parent"/>
+              <levelValue>2147483647</levelValue>
+            </log>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+        </bins>
+      </sys.stats.BinnedTally>
+    </entry>
+  </inMsgTraffic>
+  <outMsgTraffic>
+    <entry>
+      <string>sys.dht.impl.msgs.DHT_Request</string>
+      <sys.stats.BinnedTally>
+        <name></name>
+        <binSize>60.0</binSize>
+        <bins>
+          <umontreal.iro.lecuyer.stat.Tally>
+            <listeners/>
+            <maxValue>429.0</maxValue>
+            <minValue>225.0</minValue>
+            <sumValue>2639.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>8</numObs>
+            <sumSquares>940907.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>329.875</curAverage>
+            <curSum2>70366.87500000001</curSum2>
+            <log reference="../../../../../../inMsgTraffic/entry/sys.stats.BinnedTally/bins/umontreal.iro.lecuyer.stat.Tally/log"/>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </umontreal.iro.lecuyer.stat.Tally>
+        </bins>
+      </sys.stats.BinnedTally>
+    </entry>
+  </outMsgTraffic>
+  <rpcExecTime/>
+</sys.stats.RpcStats>

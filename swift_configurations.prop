@@ -1,0 +1,12 @@
+#
+#Tue May 15 12:29:13 WEST 2012
+defaultReplicaPort=8087
+W=1
+enableReferences=false
+referenceClass=swift.crdt.ReferenceCRDTImpl
+R=1
+N=3
+serializerClass=swift.serializers.CvRDTSerializerJSON
+uniqueRuntime=false
+defaultReplicaLocation=127.0.0.1
+clientClass=swift.clients.SwiftClientWithMeta
