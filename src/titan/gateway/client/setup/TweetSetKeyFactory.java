@@ -17,11 +17,12 @@ public class TweetSetKeyFactory implements PartitionKeyFactory {
 	}
 
 	//TODO: use tweetkey instead of syskey....
+	@Override
 	public Long getPartitionKey(SysKey dataKey, String setName, int nPartitions) {
 		synchronized(digest){
 			digest.reset();
 			Long tweetKey = dataKey.longHashValue();
-			int partition = (Math.abs(tweetKey.intValue()%4))+1;
+			int partition = (Math.abs(tweetKey.intValue()%nPartitions))+1;
 			digest.update((setName+partition).getBytes());
 			return new BigInteger(1, digest.digest()).longValue() >>> 1;
 		}
@@ -31,7 +32,7 @@ public class TweetSetKeyFactory implements PartitionKeyFactory {
 	public Long getPartitionKey(int partition, String setName, int totalPartitions) {
 		synchronized(digest){
 			digest.reset();
-	        digest.update((setName+partition).getBytes());
+	        digest.update((setName+(partition)).getBytes());
 	        return new BigInteger(1, digest.digest()).longValue() >>> 1;
 		}
 	}

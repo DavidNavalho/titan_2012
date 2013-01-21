@@ -14,6 +14,7 @@ public class TotalWordsSetKeyFactory implements PartitionKeyFactory {
 	public TotalWordsSetKeyFactory() {
 	}
 	
+	@Override
 	public Long getPartitionKey(SysKey dataKey, String setName, int nPartitions) {
 		synchronized(digest){
 			digest.reset();

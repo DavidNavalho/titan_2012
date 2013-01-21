@@ -36,6 +36,8 @@ public class PartitionNodeHandler {
 	
 	public void addTrigger(Long partitionKey, Trigger trigger){
 		PartitionNode node = this.partitionNodes.get(partitionKey);
+		System.out.println("Adding trigger "+trigger.getTriggerName()+" to partition: "+partitionKey);
+		System.out.println("PartitionNode: "+node.toString());
 		node.addTrigger(trigger);
 		System.out.println("Sys> Trigger "+trigger.getTriggerName()+" added to partition "+node.getSet().getPartitionName()+"_"+partitionKey);
 	}

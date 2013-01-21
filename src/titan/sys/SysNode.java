@@ -21,7 +21,6 @@ import titan.sys.data.SysSet;
 import titan.sys.data.Sysmap;
 import titan.sys.data.triggers.Trigger;
 import titan.sys.messages.SetCreation;
-import titan.sys.messages.SysMessage;
 import titan.sys.messages.SysmapCreationMessage;
 import titan.sys.messages.SysmapRequestMessage;
 import titan.sys.messages.TriggerCreationMessage;
@@ -98,10 +97,11 @@ public class SysNode extends DHT_Node{
 			try{
 				for(int i=1;i<=nPartitions;i++){
 					Long partitionKey = keyMaker.getPartitionKey(i,setName,nPartitions);
-					System.err.println("SysMain> ["+i+"] sending set creation to partition: "+setName+"."+partitionKey);
+//					System.err.println("SysMain> ["+i+"] sending set creation to partition: "+setName+"."+partitionKey);
 					SetCreation request = new SetCreation(setName, partitionKey, setCreator);
 					//TODO: blabla
-					this.stub.send(new PartitionKey(setName, partitionKey, setCreator), request, this.replyHandler);
+					System.out.println("Sending partition creation request "+setName+"|partitionKey");
+					this.stub.send(/*new PartitionKey(setName, partitionKey, setCreator)*/new SysKey(partitionKey), request, this.replyHandler);
 					BlockingQueue<SetCreateReply> queue = this.setCreators.get(setName);
 					SetCreateReply reply = queue.take();
 					//add the partition to the sysmap
@@ -185,7 +185,7 @@ public class SysNode extends DHT_Node{
 	}
 	
 	public void addPartitionNode(PartitionNode node){
-		node.setNode();
+//		node.setNode();
 		this.sysPartitions.addNode(node);
 	}
 
@@ -213,6 +213,7 @@ public class SysNode extends DHT_Node{
 			//TODO: fetch sysmap from other nodes if need be!
 			//TODO: I'll just use 1 server for now, complete this later...
 //			Sysmap sysmap = this.getSysmap(key)
+			System.err.println("Data Delivery failed!");
 		}
 	}
 	
@@ -291,7 +292,7 @@ public class SysNode extends DHT_Node{
 		
 		@Override
 		public void onReceive(Handle con, Key key, SetCreation message) {
-			System.err.println(console+"Set creation message received");
+			System.err.println(console+"Set creation message received: "+message.getSetName()+"|"+message.getPartitionKey());
 			partitionNodeCreation(message.getPartitionKey(), message.getSetFactory());
 			con.reply(new SetCreateReply(message.getSetName(), message.getPartitionKey(), self.endpoint));
 		}
@@ -320,6 +321,7 @@ public class SysNode extends DHT_Node{
 		@Override
 		public void onReceive(Handle con, Key key, DataDelivery msg) {
 			// TODO Auto-generated method stub
+//			System.out.println("DataDelivery message received for: "+msg.getPartitionKey());
 			dataDelivery(msg.getData().getObj(), msg.getPartitionKey());
 //			System.out.println(console+"Replying!");
 			con.reply(new RpcReply(true));

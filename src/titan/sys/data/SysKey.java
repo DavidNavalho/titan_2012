@@ -27,10 +27,18 @@ public class SysKey implements DHT.Key, Serializable{
 	
 	public SysKey(Long realKey){
 		this.realKey = realKey;
+		this.key = null;
 	}
 	
 	public String toString() {
-		return key;
+		if(this.realKey!=null)
+			return this.realKey.toString();
+		else
+			return this.key;
+	}
+	
+	protected Long getReal(){
+		return this.longHashValue();
 	}
 	
 	/*public boolean isBiggerThan(SysKey otherKey){
@@ -41,9 +49,12 @@ public class SysKey implements DHT.Key, Serializable{
 	
 	//TODO: don't think this is the right way....but it suffices for now
 	public boolean compareTo(SysKey key){
-		if(this.key.toString().equalsIgnoreCase(key.toString()))
+		if((this.key == null) || (key.key == null))
+			return this.getReal()==key.getReal();
+		else if(this.key.toString().equalsIgnoreCase(key.toString()))
 			return true;
-		return false;
+		else
+			return false;
 	}
 	
 	@Override

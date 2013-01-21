@@ -76,7 +76,7 @@ public class SysmapManager {
 			//zero out the partitions again...
 			this.partitions = new HashMap<Long, SysSet>(2*sysmap.partitions());
 			this.readyPartitions();
-			}
+		}
 //		return count;
 //		Threading.synchronizedNotifyAllOn(FileReaderClient.lock);
 	}

@@ -1,3 +1,6 @@
 localhost
 twitterClient1
 /Users/jinx/Documents/eclipse/Tinkering/test/checkin_data_1.txt
+localhost
+twitterClient2
+/Users/jinx/Documents/eclipse/Tinkering/test/checkin_data_2.txt

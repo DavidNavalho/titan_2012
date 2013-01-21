@@ -22,8 +22,8 @@ public class PartitionNode{
 //		System.err.println("New partition created: "+this.partitionKey);
 	}
 	
-	public void setNode(){
-	}
+//	public void setNode(){
+//	}
 
 	public void addData(Object data) {
 		this.set.add(data);

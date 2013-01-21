@@ -11,13 +11,13 @@ import sys.dht.api.DHT;
 import titan.gateway.setup.PartitionKeyFactory;
 import titan.gateway.setup.SetFactory;
 
-public class Sysmap {
+public class Sysmap{
 	protected SetFactory setCreator;
 	protected PartitionKeyFactory keyMaker;
 	protected int nPartitions;
 	protected String setName;SysKey syskey;
 	
-	protected Map<Long,DHT> partitions;
+	transient protected Map<Long,DHT> partitions;
 
 	public Sysmap() {
 		// TODO Auto-generated constructor stub
@@ -60,14 +60,14 @@ public class Sysmap {
 		return this.nPartitions;
 	}
 	
-	public Long getPartitionKey(SysKey key){
-		return this.keyMaker.getPartitionKey(key, this.setName, this.nPartitions);
-	}
-	
-	public DHT getPartition(SysKey key){
-		Long partitionKey = this.keyMaker.getPartitionKey(key, this.setName, this.nPartitions);
-		return this.getPartition(partitionKey);
-	}
+//	public Long getPartitionKey(SysKey key){
+//		return this.keyMaker.getPartitionKey(key, this.setName, this.nPartitions);
+//	}
+//	
+//	public DHT getPartition(SysKey key){
+//		Long partitionKey = this.keyMaker.getPartitionKey(key, this.setName, this.nPartitions);
+//		return this.getPartition(partitionKey);
+//	}
 	
 	public DHT getPartition(Long partitionKey){
 		if(this.partitions==null)

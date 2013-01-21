@@ -130,16 +130,23 @@ public class ResourcesSetup {
 		TweetSetKeyFactory setKey = new TweetSetKeyFactory();
 		SetFactory factory = new TweetSetFactory();
 		/*Sysmap tweetSetSysmap =*/ rs.createResource(setName, numberOfPartitions, setKey, factory);
+		String phrase = "Sent TweetSet creation data. Expected keys:";
+		for(int i=1;i<=numberOfPartitions;i++)
+			phrase+=" "+setKey.getPartitionKey(i, setName, numberOfPartitions);
+		System.out.println(phrase);
+		
+		
+//		/*
 		//create WordCountSet
 		String wcSetName = "TweetWordCountSet";
 		TweetWCSetKeyFactory wcSetKey = new TweetWCSetKeyFactory();
 		SetFactory wcFactory = new WCTweetSetFactory();
-		/*Sysmap wordCountSysmap = */rs.createResource(wcSetName, wcNumberOfPartitions, wcSetKey, wcFactory);
+		rs.createResource(wcSetName, wcNumberOfPartitions, wcSetKey, wcFactory);
 		//create TotalWordCountSet
 		String totalSetName = "TotalWordsCountSet";
 		TotalWordsSetKeyFactory totalSetKey = new TotalWordsSetKeyFactory();
 		SetFactory totalFactory = new TotalSetFactory();
-		/*Sysmap totalSysmap = */rs.createResource(totalSetName, totalNumberOfPartitions, totalSetKey, totalFactory);
+		rs.createResource(totalSetName, totalNumberOfPartitions, totalSetKey, totalFactory);
 		try {
 			System.out.println("Sleeping...");
 			Thread.sleep(10000);
@@ -163,6 +170,7 @@ public class ResourcesSetup {
 		//2nd Trigger in TweetWordCountSet
 		Trigger trigger2 = new TotalWordsCountTrigger(totalSysmap, waitTime2, minLoad2);
 		rs.setTrigger(wcSetName, trigger2);
+		//*/
 	}
 	
 	private class RSHandler extends  SysHandler.ReplyHandler{

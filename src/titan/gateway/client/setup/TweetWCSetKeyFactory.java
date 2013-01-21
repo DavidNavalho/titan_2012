@@ -17,6 +17,7 @@ public class TweetWCSetKeyFactory implements PartitionKeyFactory {
 	}
 
 	//TODO: use tweetkey instead of syskey....
+	@Override
 	public Long getPartitionKey(SysKey dataKey, String setName, int nPartitions) {
 		synchronized(digest){
 			digest.reset();
