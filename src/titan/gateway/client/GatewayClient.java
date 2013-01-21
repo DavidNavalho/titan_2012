@@ -18,6 +18,7 @@ import titan.sys.messages.replies.SetCreateReply;
 import titan.sys.messages.replies.SysMessageReply;
 import titan.sys.messages.replies.SysmapCreateReply;
 import titan.sys.messages.replies.SysmapReplyMessage;
+import titan.sys.messages.rpc.RpcReply;
 import utils.ClientsManager;
 import dataSources.ITweetClient;
 
@@ -116,6 +117,12 @@ public class GatewayClient {
 		@Override
 		public void onReceive(SetCreateReply reply) {
 			System.err.println(reply.getSetName());
+		}
+
+		@Override
+		public void onReceive(RpcReply reply) {
+			// TODO Auto-generated method stub
+			
 		}
 	}
 }

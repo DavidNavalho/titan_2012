@@ -2,8 +2,6 @@ package titan.sys.data.triggers;
 
 import java.util.LinkedList;
 
-import sys.net.api.rpc.RpcEndpoint;
-import sys.net.api.rpc.RpcHandler;
 import titan.data.DataManager;
 import titan.sys.data.Sysmap;
 
@@ -44,7 +42,7 @@ public abstract class Trigger {
 	public abstract Object processData(LinkedList<Object> dataIn);
 
 	//this needs to be overriden...
-	public abstract void syncData(RpcEndpoint rpc, RpcHandler clientRpcHandler);
+	public abstract void syncData();
 	
 	//I should change this - I should only need to have a setName as target, right?
 	public Sysmap getTargetSet(){

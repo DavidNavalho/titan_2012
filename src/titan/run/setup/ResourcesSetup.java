@@ -22,10 +22,13 @@ import titan.sys.data.triggers.TotalWordsCountTrigger;
 import titan.sys.data.triggers.Trigger;
 import titan.sys.data.triggers.TweetSetTriggerToWordCount;
 import titan.sys.messages.SysmapCreationMessage;
+import titan.sys.messages.SysmapRequestMessage;
 import titan.sys.messages.TriggerCreationMessage;
 import titan.sys.messages.replies.SetCreateReply;
 import titan.sys.messages.replies.SysMessageReply;
 import titan.sys.messages.replies.SysmapCreateReply;
+import titan.sys.messages.replies.SysmapReplyMessage;
+import titan.sys.messages.rpc.RpcReply;
 import utils.danger.VersionControl;
 //import static sys.utils.Log.Log;
 
@@ -35,6 +38,7 @@ public class ResourcesSetup {
 	protected String console = "ResourcesSetup$ ";
 	protected SysHandler.ReplyHandler asyncHandler;
 	protected BlockingQueue<Sysmap> sysmapQueue;
+	protected BlockingQueue<Sysmap> completeSysmapQueue;
 	protected BlockingQueue<SetCreateReply> triggerQueue;
 	
 	protected VersionControl vc = new VersionControl("test");
@@ -42,6 +46,7 @@ public class ResourcesSetup {
 	public ResourcesSetup() {
 //		Log.setLevel(Level.ALL);
 		this.sysmapQueue = new LinkedBlockingQueue<Sysmap>();
+		this.completeSysmapQueue = new LinkedBlockingQueue<Sysmap>();
 		this.asyncHandler = new RSHandler();
 		sys.Sys.init();
         this.stub = Sys.getDHT_ClientStub();
@@ -63,6 +68,20 @@ public class ResourcesSetup {
 //			e.printStackTrace();
 //		}
 		return null;//TODO: blergh!
+	}
+	
+	public Sysmap getSysmap(String setName){
+		System.out.println("Requesting sysmap for: "+setName);
+		SysmapRequestMessage srm = new SysmapRequestMessage("sysmapRequest", setName);
+		this.stub.send(new SysKey(setName), srm, this.asyncHandler);
+		Sysmap sysmap = null;
+		try {
+			sysmap = this.completeSysmapQueue.take();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		return sysmap;
 	}
 	
 	public void setTrigger(String setName, Trigger trigger){
@@ -129,10 +148,12 @@ public class ResourcesSetup {
 			e.printStackTrace();
 		}
 		//Doing a TimeWindow over TotalWords every 
-		GatewayClient gw = new GatewayClient();
-		Sysmap wordCountSysmap = gw.requestSysmap("TweetWordCountSet");
+//		GatewayClient gw = new GatewayClient();
+//		Sysmap wordCountSysmap = gw.requestSysmap("TweetWordCountSet");
+		Sysmap wordCountSysmap = rs.getSysmap("TweetWordCountSet");
 		System.out.println("$ "+wordCountSysmap);
-		Sysmap totalSysmap = gw.requestSysmap("TotalWordsCountSet");
+//		Sysmap totalSysmap = gw.requestSysmap("TotalWordsCountSet");
+		Sysmap totalSysmap = rs.getSysmap("TotalWordsCountSet");
 		System.out.println("$ "+totalSysmap);
 		//doing it async for now....
 		//Now that we have the sysmaps, we can add the triggers!
@@ -149,6 +170,15 @@ public class ResourcesSetup {
 		@Override
 		public void onReceive(SysMessageReply reply) {
 			System.out.println(console+reply.messageType);
+			try{
+				if(reply.messageType.equalsIgnoreCase("sysmapReply")){
+					SysmapReplyMessage msg = (SysmapReplyMessage) reply;
+					completeSysmapQueue.put(msg.getSysmap());
+				}
+			}catch(InterruptedException e){
+				// TODO: error handling
+				e.printStackTrace();
+			}
 		}
 
 		@Override
@@ -164,6 +194,12 @@ public class ResourcesSetup {
 		@Override
 		public void onReceive(SetCreateReply reply) {
 			//TODO
+		}
+
+		@Override
+		public void onReceive(RpcReply reply) {
+			// TODO Auto-generated method stub
+			
 		}
 		
 		

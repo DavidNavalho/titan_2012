@@ -1,7 +1,6 @@
 package titan.sys;
 
 import static sys.Sys.Sys;
-import static sys.net.api.Networking.Networking;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,24 +9,17 @@ import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import sys.RpcServices;
 import sys.dht.DHT_Node;
 import sys.dht.api.DHT;
 import sys.dht.api.DHT.Handle;
 import sys.dht.api.DHT.Key;
-import sys.dht.catadupa.Node;
-import sys.net.api.Endpoint;
-import sys.net.api.Networking.TransportProvider;
-import sys.net.api.rpc.RpcEndpoint;
-import sys.net.api.rpc.RpcFactory;
-import sys.net.api.rpc.RpcHandle;
 import titan.gateway.setup.PartitionKeyFactory;
 import titan.gateway.setup.SetFactory;
 import titan.sys.data.PartitionKey;
+import titan.sys.data.SysKey;
 import titan.sys.data.SysSet;
 import titan.sys.data.Sysmap;
 import titan.sys.data.triggers.Trigger;
-import titan.sys.handlers.TitanRpcHandler;
 import titan.sys.messages.SetCreation;
 import titan.sys.messages.SysMessage;
 import titan.sys.messages.SysmapCreationMessage;
@@ -56,8 +48,8 @@ public class SysNode extends DHT_Node{
 	
 	private SysmapHandler sysmaps;
 	
-	private RpcEndpoint rpc;
-	private ServerHandler serverHandler;
+//	private RpcEndpoint rpc;
+//	private ServerHandler serverHandler;
 	
 	private DHT stub;
 	
@@ -78,7 +70,7 @@ public class SysNode extends DHT_Node{
 //		Log.setLevel(Level.ALL);
 		DHT_Node.setHandler(this.requestHandler);
 		this.stub = Sys.getDHT_ClientStub();
-		this.rpc = rpcFactory.toService(RpcServices.TITAN.ordinal(), this.serverHandler);
+//		this.rpc = rpcFactory.toService(RpcServices.TITAN.ordinal(), this.serverHandler);
 		System.err.println(console+"System initialized.");
 		System.err.println("Key: "+self.key+", endpoint:"+self.endpoint+", DBkeys: "+db.nodeKeys());
 		//TODO: how do i initialize the reply handler??? - for the tests, I'll keep 1 node for now...
@@ -113,7 +105,7 @@ public class SysNode extends DHT_Node{
 					BlockingQueue<SetCreateReply> queue = this.setCreators.get(setName);
 					SetCreateReply reply = queue.take();
 					//add the partition to the sysmap
-					sysmap.addSysmapInformation(reply.getPartitionKey(), reply.getEndpoint());
+//					sysmap.addSysmapInformation(reply.getPartitionKey(), reply.getEndpoint());
 				}
 				//and finally, add the sysmap to the Node's sysmaps map
 				this.sysmaps.addSysmap(sysmap, setName);
@@ -157,13 +149,14 @@ public class SysNode extends DHT_Node{
 	public void addTrigger(Trigger trigger, String setName){
 		System.err.println("Received Add Trigger message");
 		Sysmap sysmap = this.sysmaps.getSysmap(setName);
-		Set<Entry<Long,Endpoint>> partitions = sysmap.getPartitions().entrySet();
+		Set<Entry<Long,DHT>> partitions = sysmap.getPartitions().entrySet();
 		System.out.println(sysmap);
-		for (Entry<Long, Endpoint> entry : partitions) {
-			Endpoint triggerLocation = entry.getValue();
+		for (Entry<Long, DHT> entry : partitions) {
+			DHT triggerLocation = entry.getValue();
 			Long partitionKey = entry.getKey();
 			System.out.println(console+"Sending trigger to: "+setName+"."+partitionKey);
-			rpc.send(triggerLocation, new TriggerDelivery(trigger, partitionKey), this.serverHandler);
+			triggerLocation.send(new SysKey(partitionKey), new TriggerDelivery(trigger, partitionKey), this.replyHandler);
+//			rpc.send(triggerLocation, new TriggerDelivery(trigger, partitionKey), this.serverHandler);
 			//I'll wait for the answers...
 			System.out.println(console+"Trigger sent.");
 		}
@@ -192,7 +185,7 @@ public class SysNode extends DHT_Node{
 	}
 	
 	public void addPartitionNode(PartitionNode node){
-		node.setNode(this.rpc, this.serverHandler);
+		node.setNode();
 		this.sysPartitions.addNode(node);
 	}
 
@@ -241,30 +234,38 @@ public class SysNode extends DHT_Node{
 	
 	//TODO: maybe differentiate the message types....
 	private class SysNodeHandler extends SysHandler.RequestHandler{
+		
+//		@Override
+//		public void onReceive(DHT.Handle conn, Key key, SysMessage request) {
+//			String messageType = request.messageType;
+//			System.out.println(console+"Message request: "+messageType);
+//			if(messageType.trim().equalsIgnoreCase("sysmapRequest")){
+//				SysmapRequestMessage msg = (SysmapRequestMessage) request;
+//				Sysmap sysmap = getSysmap(msg.getSetName());
+//				conn.reply(new SysmapReplyMessage("sysmapReply",sysmap));
+//			}/*else if(messageType.trim().equalsIgnoreCase("addData")){
+//				System.err.println("!!!!");
+//				DataDeliveryMessage msg = (DataDeliveryMessage) request;
+////				dataDelivery(msg.getData(), msg.getPartitionKey());
+//				if(conn.expectingReply())
+//					System.out.println("BLARGH");
+//			}else if(messageType.trim().equalsIgnoreCase("addSet")){
+//				DataDeliveryMessage msg = (DataDeliveryMessage) request;
+//				//TODO
+//			}else if(messageType.trim().equalsIgnoreCase("addTrigger")){
+//				TriggerCreationMessage msg = (TriggerCreationMessage) request;
+//				addTrigger(msg.getTrigger(), msg.getSetName());
+//			}*/
+//			else{
+//				System.err.println(console+"Message type unknown or invalid. Message ignored.");
+//			}
+//		}
+		
 		@Override
-		public void onReceive(DHT.Handle conn, Key key, SysMessage request) {
-			String messageType = request.messageType;
-			System.out.println(console+"Message request: "+messageType);
-			if(messageType.trim().equalsIgnoreCase("sysmapRequest")){
-				SysmapRequestMessage msg = (SysmapRequestMessage) request;
-				Sysmap sysmap = getSysmap(msg.getSetName());
-				conn.reply(new SysmapReplyMessage("sysmapReply",sysmap));
-			}/*else if(messageType.trim().equalsIgnoreCase("addData")){
-				System.err.println("!!!!");
-				DataDeliveryMessage msg = (DataDeliveryMessage) request;
-//				dataDelivery(msg.getData(), msg.getPartitionKey());
-				if(conn.expectingReply())
-					System.out.println("BLARGH");
-			}else if(messageType.trim().equalsIgnoreCase("addSet")){
-				DataDeliveryMessage msg = (DataDeliveryMessage) request;
-				//TODO
-			}else if(messageType.trim().equalsIgnoreCase("addTrigger")){
-				TriggerCreationMessage msg = (TriggerCreationMessage) request;
-				addTrigger(msg.getTrigger(), msg.getSetName());
-			}*/
-			else{
-				System.err.println(console+"Message type unknown or invalid. Message ignored.");
-			}
+		public void onReceive(Handle con, Key key, SysmapRequestMessage message) {
+			System.out.println("Sys> Sysmap request message received");
+			Sysmap sysmap = getSysmap(message.getSetName());
+			con.reply(new SysmapReplyMessage("sysmapReply", sysmap));
 		}
 		
 		@Override
@@ -315,12 +316,29 @@ public class SysNode extends DHT_Node{
 			Sysmap sysmap = addSet(msg.getSetName(), msg.getnPartitions(), msg.getFactory(), msg.getKey());
 			con.reply(new SysmapCreateReply(sysmap));
 		}
+
+		@Override
+		public void onReceive(Handle con, Key key, DataDelivery msg) {
+			// TODO Auto-generated method stub
+			dataDelivery(msg.getData().getObj(), msg.getPartitionKey());
+//			System.out.println(console+"Replying!");
+			con.reply(new RpcReply(true));
+		}
+
+		@Override
+		public void onReceive(Handle con, Key key, TriggerDelivery m) {
+			// TODO Auto-generated method stub
+			System.out.println("Sys> Trigger delivery: "+m.toString());
+			addTrigger(m.getTrigger(),m.getPartitionKey());
+			con.reply(new RpcReply(true));
+		}
+
 	}
 	
 	private class SysNodeReplyHandler extends SysHandler.ReplyHandler{
 		@Override
 		public void onReceive(SysMessageReply reply) {
-//			System.out.println("RMAH!");
+			System.out.println("RMAH!");
 			//TODO: not doing anything...yet!
 		}
 		
@@ -340,30 +358,37 @@ public class SysNode extends DHT_Node{
 				e.printStackTrace();//TODO: error handling...
 			}
 		}
+
+		//TODO: is this being used?
+		@Override
+		public void onReceive(RpcReply reply) {
+			// TODO Auto-generated method stub
+			System.out.println("Sys> RpcReply?");
+		}
 	}
 	
-	private class ServerHandler extends TitanRpcHandler.RpcHandler{
-		
-		@Override
-		public void onReceive(RpcHandle handle, DataDelivery msg) {
-//			System.out.println(console+" RPC Message received: "+msg.getMessage());
-			dataDelivery(msg.getData().getObj(), msg.getPartitionKey());
-//			System.out.println(console+"Replying!");
-			(handle).reply(new RpcReply(true));
-		}
-		
-		@Override
-		public void onReceive(RpcHandle handle, TriggerDelivery m) {
-//			System.out.println(console+"Adding new Trigger to partition: "+m.getPartitionKey());
-			addTrigger(m.getTrigger(),m.getPartitionKey());
-			(handle).reply(new RpcReply(true));
-		}
-		
-		@Override
-		public void onReceive(RpcHandle handle, RpcReply msg) {
-			System.out.println(console+" RPC Message received: "+msg.toString());
-		}
-	}
+//	private class ServerHandler extends TitanRpcHandler.RpcHandler{
+//		
+//		@Override
+//		public void onReceive(RpcHandle handle, DataDelivery msg) {
+////			System.out.println(console+" RPC Message received: "+msg.getMessage());
+//			dataDelivery(msg.getData().getObj(), msg.getPartitionKey());
+////			System.out.println(console+"Replying!");
+//			(handle).reply(new RpcReply(true));
+//		}
+//		
+//		@Override
+//		public void onReceive(RpcHandle handle, TriggerDelivery m) {
+////			System.out.println(console+"Adding new Trigger to partition: "+m.getPartitionKey());
+//			addTrigger(m.getTrigger(),m.getPartitionKey());
+//			(handle).reply(new RpcReply(true));
+//		}
+//		
+//		@Override
+//		public void onReceive(RpcHandle handle, RpcReply msg) {
+//			System.out.println(console+" RPC Message received: "+msg.toString());
+//		}
+//	}
 	
 	
 }

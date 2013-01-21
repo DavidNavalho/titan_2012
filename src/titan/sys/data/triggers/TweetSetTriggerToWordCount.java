@@ -53,7 +53,7 @@ public class TweetSetTriggerToWordCount extends Trigger{
 	}
 	
 	@Override
-	public synchronized void syncData(RpcEndpoint rpc, RpcHandler clientRpcHandler) {
+	public synchronized void syncData() {
 		synchronized (words) {
 			for (WordCount wc : words.values()) {
 				this.manager.addData(wc, wc.getWCKey());

@@ -15,6 +15,7 @@ public class SysKey implements DHT.Key, Serializable{
 	private static final long serialVersionUID = 1L;
 	private static MessageDigest digest;
 	private String key;
+	protected Long realKey = null;
 
 	public SysKey() {
 		// TODO Auto-generated constructor stub
@@ -22,6 +23,10 @@ public class SysKey implements DHT.Key, Serializable{
 	
 	public SysKey(String key) {
 		this.key = key;
+	}
+	
+	public SysKey(Long realKey){
+		this.realKey = realKey;
 	}
 	
 	public String toString() {
@@ -59,10 +64,14 @@ public class SysKey implements DHT.Key, Serializable{
 	//TODO: I suppose key extensions should override this? or should it be a sepparate mechanism? - sepparate for now
 	@Override
 	public synchronized long longHashValue() {
+		if(this.realKey!=null){
+			return this.realKey;
+		}
 		synchronized(digest){
 			digest.reset();
 	        digest.update(key.getBytes());
-	        return new BigInteger(1, digest.digest()).longValue() >>> 1;
+	        this.realKey = new BigInteger(1, digest.digest()).longValue() >>> 1;
+	        return this.realKey;
 		}
 	}
 	

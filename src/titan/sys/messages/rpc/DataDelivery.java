@@ -1,13 +1,11 @@
 package titan.sys.messages.rpc;
 
-import sys.net.api.rpc.RpcHandle;
-import sys.net.api.rpc.RpcHandler;
-import sys.net.api.rpc.RpcMessage;
+import sys.dht.api.DHT;
+import titan.sys.SysHandler;
 import titan.sys.data.SysSet.SysData;
-import titan.sys.handlers.TitanRpcHandler;
 
 
-public class DataDelivery implements RpcMessage{
+public class DataDelivery implements DHT.Message{
 	
 	protected String message;
 	protected SysData data;
@@ -35,7 +33,12 @@ public class DataDelivery implements RpcMessage{
 	}
 	
 	@Override
-	public void deliverTo(RpcHandle handle, RpcHandler handler) {
-		((TitanRpcHandler.RpcHandler) handler).onReceive(handle, this);
+	public void deliverTo(DHT.Handle conn, DHT.Key key, DHT.MessageHandler handler) {
+		((SysHandler.RequestHandler) handler).onReceive(conn, key, this);
 	}
+	
+//	@Override
+//	public void deliverTo(RpcHandle handle, RpcHandler handler) {
+//		((TitanRpcHandler.RpcHandler) handler).onReceive(handle, this);
+//	}
 }

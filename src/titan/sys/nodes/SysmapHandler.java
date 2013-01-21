@@ -2,7 +2,6 @@ package titan.sys.nodes;
 
 import java.util.LinkedList;
 
-import sys.net.api.Endpoint;
 import titan.sys.data.Sysmap;
 
 public class SysmapHandler {
@@ -25,11 +24,6 @@ public class SysmapHandler {
 		}else{//TODO: replace current sysmap with new one...
 			//TODO
 		}
-	}
-	
-	public void updateSysmap(String setName, Long key, Endpoint endpoint){
-		Sysmap sysmap = this.getSysmap(setName);
-		sysmap.addSysmapInformation(key, endpoint);
 	}
 	
 	//TODO: returning null also isnt helping much here...

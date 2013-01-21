@@ -1,6 +1,9 @@
 package titan.sys.messages;
 
 import sys.dht.api.DHT;
+import sys.dht.api.DHT.Handle;
+import sys.dht.api.DHT.Key;
+import sys.dht.api.DHT.MessageHandler;
 import titan.sys.SysHandler;
 import titan.sys.data.triggers.Trigger;
 import utils.danger.VersionControl;
@@ -36,7 +39,7 @@ public class TriggerCreationMessage implements DHT.Message{
 	}
 	
 	@Override
-    public void deliverTo(DHT.Handle conn, DHT.Key key, DHT.MessageHandler handler) {
+    public void deliverTo(Handle conn, Key key, MessageHandler handler) {
         ((SysHandler.RequestHandler) handler).onReceive(conn, key, this);
     }
 	

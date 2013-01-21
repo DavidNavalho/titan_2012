@@ -1,11 +1,9 @@
 package titan.sys.messages.rpc;
 
-import sys.net.api.rpc.RpcHandle;
-import sys.net.api.rpc.RpcHandler;
-import sys.net.api.rpc.RpcMessage;
-import titan.sys.handlers.TitanRpcHandler;
+import sys.dht.api.DHT;
+import titan.sys.SysHandler;
 
-public class RpcReply implements RpcMessage{
+public class RpcReply implements DHT.Reply{
 
 	protected boolean received;
 	
@@ -13,16 +11,19 @@ public class RpcReply implements RpcMessage{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public RpcReply(boolean received){
+	public RpcReply(boolean received) {
 		this.received = received;
 	}
 	
-	public boolean wasReceived() {
-		return received;
+	public boolean wasReceived(){
+		return this.received;
 	}
 	
 	@Override
-	public void deliverTo(RpcHandle handle, RpcHandler handler) {
-		((TitanRpcHandler.RpcHandler) handler).onReceive(handle, this);
-	}
+    public void deliverTo(DHT.Handle conn, DHT.ReplyHandler handler) {
+        if (conn.expectingReply())
+            ((SysHandler.ReplyHandler) handler).onReceive(conn, this);
+        else
+            ((SysHandler.ReplyHandler) handler).onReceive(this);
+    }
 }

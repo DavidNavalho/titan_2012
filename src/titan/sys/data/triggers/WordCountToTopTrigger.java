@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import sys.net.api.rpc.RpcEndpoint;
-import sys.net.api.rpc.RpcHandler;
 import titan.sys.data.Sysmap;
 import titan.sys.data.WordCount;
 
@@ -83,7 +81,7 @@ public class WordCountToTopTrigger extends Trigger{
 	}
 	
 	@Override
-	public void syncData(RpcEndpoint rpc, RpcHandler clientRpcHandler) {
+	public void syncData() {
 		synchronized (this.sortedList) {
 			int i=0;
 			Iterator<WordCount> it = this.sortedList.iterator();

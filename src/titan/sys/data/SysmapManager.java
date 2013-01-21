@@ -3,9 +3,9 @@ package titan.sys.data;
 import java.util.HashMap;
 import java.util.Map;
 
-import sys.net.api.rpc.RpcEndpoint;
-import sys.net.api.rpc.RpcHandler;
+import sys.dht.api.DHT;
 import titan.gateway.setup.PartitionKeyFactory;
+import titan.sys.SysHandler;
 import titan.sys.data.SysSet.SysData;
 import titan.sys.messages.rpc.DataDelivery;
 
@@ -56,7 +56,7 @@ public class SysmapManager {
 	 * @param clientRpcHandler
 	 * @return the number of syncRequests sent
 	 */
-	public void syncAndDiscard(RpcEndpoint rpc, RpcHandler clientRpcHandler){
+	public void syncAndDiscard(SysHandler.ReplyHandler clientHandler){
 //		int count=0;
 		synchronized (partitions) {
 			PartitionKeyFactory keyMaker = sysmap.getKeyMaker();
@@ -66,7 +66,11 @@ public class SysmapManager {
 				Long partitionKey = keyMaker.getPartitionKey(i, setName, totalPartitions);
 				SysSet set = this.partitions.get(partitionKey);
 				SysData data = set.getData();
-				rpc.send(sysmap.getPartition(partitionKey), new DataDelivery("addData",data,partitionKey), clientRpcHandler, 50);
+				DHT stub = sysmap.getPartition(partitionKey);
+				//TODO: check that this syskey creation is consistent...
+//				System.out.println("Stub: "+stub.toString());
+				stub.send(new SysKey(partitionKey), new DataDelivery("addData",data,partitionKey), clientHandler);//TODO: no timeout?
+//				rpc.send(sysmap.getPartition(partitionKey), new DataDelivery("addData",data,partitionKey), clientRpcHandler, 50);
 //				count+=data.getDataSize();
 			}
 			//zero out the partitions again...

@@ -2,8 +2,6 @@ package titan.sys.data.triggers;
 
 import java.util.LinkedList;
 
-import sys.net.api.rpc.RpcEndpoint;
-import sys.net.api.rpc.RpcHandler;
 import titan.sys.data.SysKey;
 import titan.sys.data.Sysmap;
 import titan.sys.data.WordCount;
@@ -39,7 +37,7 @@ public class TotalWordsCountTrigger extends Trigger {
 	}
 
 	@Override
-	public void syncData(RpcEndpoint rpc, RpcHandler clientRpcHandler) {
+	public void syncData() {
 		// TODO Auto-generated method stub
 		synchronized (this.wordCount) {//System.out.println("Sys> Sending wordCount to TotalWordsCountSet");
 //			System.out.println("TTLSyncing data...");

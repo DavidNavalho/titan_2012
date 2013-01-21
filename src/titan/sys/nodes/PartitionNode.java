@@ -2,8 +2,6 @@ package titan.sys.nodes;
 
 import java.util.LinkedList;
 
-import sys.net.api.rpc.RpcEndpoint;
-import sys.net.api.rpc.RpcHandler;
 import titan.sys.data.SysSet;
 import titan.sys.data.triggers.Trigger;
 
@@ -12,10 +10,6 @@ public class PartitionNode{
 	private SysSet set;
 	private Long partitionKey;
 	private LinkedList<Trigger> triggers;
-	
-	//TODO: these will be the actual RPC services, for now I am rerouting...
-	private RpcEndpoint rpc;
-	private RpcHandler serverHandler;
 	
 	public PartitionNode(){
 		//Needed for Kryo...
@@ -28,9 +22,7 @@ public class PartitionNode{
 //		System.err.println("New partition created: "+this.partitionKey);
 	}
 	
-	public void setNode(RpcEndpoint rpc, RpcHandler serverHandler){
-		this.rpc = rpc;
-		this.serverHandler = serverHandler;
+	public void setNode(){
 	}
 
 	public void addData(Object data) {
@@ -90,7 +82,7 @@ public class PartitionNode{
 //				System.err.println("Partition "+this.partitionKey+": Trigger ["+trigger.getTriggerName()+"] active...");
 				trigger.processData(dataToProcess);
 //				trigger.syncData(stub);
-				trigger.syncData(this.rpc, this.serverHandler);
+				trigger.syncData();
 			}
 		}
 	}

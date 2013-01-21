@@ -1,19 +1,12 @@
 package titan.gateway.client;
 
 import static sys.Sys.Sys;
-import static sys.net.api.Networking.Networking;
 
 import java.io.FileNotFoundException;
 import java.text.ParseException;
 
-import sys.RpcServices;
 import sys.dht.api.DHT;
 import sys.dht.catadupa.msgs.CatadupaHandler;
-import sys.net.api.Networking.TransportProvider;
-import sys.net.api.rpc.RpcEndpoint;
-import sys.net.api.rpc.RpcFactory;
-import sys.net.api.rpc.RpcHandle;
-import sys.net.api.rpc.RpcHandler;
 import sys.utils.Threading;
 import tests.mixed_comm.DataExtractor;
 import titan.data.DataManager;
@@ -21,15 +14,12 @@ import titan.sys.SysHandler;
 import titan.sys.data.SysKey;
 import titan.sys.data.Sysmap;
 import titan.sys.data.Tweet;
-import titan.sys.handlers.TitanRpcHandler;
 import titan.sys.messages.SysmapRequestMessage;
 import titan.sys.messages.replies.SetCreateReply;
 import titan.sys.messages.replies.SysMessageReply;
 import titan.sys.messages.replies.SysmapCreateReply;
 import titan.sys.messages.replies.SysmapReplyMessage;
-import titan.sys.messages.rpc.DataDelivery;
 import titan.sys.messages.rpc.RpcReply;
-import titan.sys.messages.rpc.TriggerDelivery;
 
 public class FileReaderClient extends CatadupaHandler {
 	
@@ -46,9 +36,9 @@ public class FileReaderClient extends CatadupaHandler {
 	protected SysHandler.ReplyHandler asyncHandler;
 	
 //	protected Node self;
-	protected RpcEndpoint rpc;
-	protected RpcFactory rpcFactory;
-	protected RpcHandler syncHandler;
+//	protected RpcEndpoint rpc;
+//	protected RpcFactory rpcFactory;
+//	protected RpcHandler syncHandler;
 
 	public FileReaderClient(String filePath, int tweetsPerSync) throws FileNotFoundException{
 		this.tweetsPerSync = tweetsPerSync;
@@ -60,9 +50,9 @@ public class FileReaderClient extends CatadupaHandler {
 		initLocalNode();
 	}
 	public void initLocalNode() {
-		this.syncHandler= new ClientRpcHandler(); //TODO: not really this....!
-		rpcFactory = Networking.rpcBind(0, TransportProvider.DEFAULT);
-		rpc = rpcFactory.toService(RpcServices.TITAN.ordinal(), this);
+//		this.syncHandler= new ClientRpcHandler(); //TODO: not really this....!
+//		rpcFactory = Networking.rpcBind(0, TransportProvider.DEFAULT);
+//		rpc = rpcFactory.toService(RpcServices.TITAN.ordinal(), this);
 //		self = new Node(rpc.localEndpoint(), Sys.getDatacenter());
 //		SeedDB.init(self);
 //		rpc = Networking.rpcConnect(TransportProvider.NETTY_IO_TCP).toService(0);
@@ -139,30 +129,35 @@ public class FileReaderClient extends CatadupaHandler {
 			// TODO Auto-generated method stub
 			
 		}
-		
-	}
-	
-	private class ClientRpcHandler extends TitanRpcHandler.RpcHandler{
-
 		@Override
-		public void onReceive(RpcHandle handle, DataDelivery m) {
-			System.out.println(console+m.getMessage());
-			//TODO should not come to this.... - maybe a sepparate RpcHandler - ClientHandler!
-		}
-
-		@Override
-		public void onReceive(RpcHandle handle, RpcReply m) {
-//			System.out.println(console+m.toString());
-		}
-
-		@Override
-		public void onReceive(RpcHandle handle, TriggerDelivery m) {
+		public void onReceive(RpcReply reply) {
 			// TODO Auto-generated method stub
 			
 		}
 		
-
 	}
+	
+//	private class ClientRpcHandler extends TitanRpcHandler.RpcHandler{
+//
+//		@Override
+//		public void onReceive(RpcHandle handle, DataDelivery m) {
+//			System.out.println(console+m.getMessage());
+//			//TODO should not come to this.... - maybe a sepparate RpcHandler - ClientHandler!
+//		}
+//
+//		@Override
+//		public void onReceive(RpcHandle handle, RpcReply m) {
+////			System.out.println(console+m.toString());
+//		}
+//
+//		@Override
+//		public void onReceive(RpcHandle handle, TriggerDelivery m) {
+//			// TODO Auto-generated method stub
+//			
+//		}
+//		
+//
+//	}
 	
 	public static void main(String[] args) throws Exception{
 		String dataLocation = "/Users/jinx/Documents/eclipse/Tinkering/test/checkin_data_1.txt";

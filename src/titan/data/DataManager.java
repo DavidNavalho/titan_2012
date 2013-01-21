@@ -1,31 +1,23 @@
 package titan.data;
 
-import static sys.net.api.Networking.Networking;
-
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import sys.RpcServices;
-import sys.net.api.Networking.TransportProvider;
-import sys.net.api.rpc.RpcEndpoint;
-import sys.net.api.rpc.RpcFactory;
-import sys.net.api.rpc.RpcHandle;
-import sys.net.api.rpc.RpcHandler;
 import sys.utils.Threading;
+import titan.sys.SysHandler;
 import titan.sys.data.SysKey;
 import titan.sys.data.Sysmap;
 import titan.sys.data.SysmapManager;
-import titan.sys.handlers.TitanRpcHandler;
-import titan.sys.messages.rpc.DataDelivery;
+import titan.sys.messages.replies.SetCreateReply;
+import titan.sys.messages.replies.SysMessageReply;
+import titan.sys.messages.replies.SysmapCreateReply;
 import titan.sys.messages.rpc.RpcReply;
-import titan.sys.messages.rpc.TriggerDelivery;
 
 public class DataManager implements Runnable{
 	
 	//TODO: this should be in a .preferences file or something similar...
 
-	private RpcEndpoint endpoint;
-	private RpcHandler handler;
+	private DataManagerHandler handler;
 	private SysmapManager dataManager;
 	private DataReader reader;
 	//TODO: extend class to enable for loadCounts/timeCounts automatic syncing
@@ -65,11 +57,10 @@ public class DataManager implements Runnable{
 //		this.maxSyncPool = 2*sysmap.partitions();
 //		this.syncPool = this.maxSyncPool;
 		this.reader = new DataReader(data, dataManager);
-		RpcFactory rpcFactory = Networking.rpcBind(0, TransportProvider.DEFAULT);
-		this.handler = new ManagerRpcHandler();
-		this.endpoint = rpcFactory.toService(RpcServices.TITAN.ordinal(), this.handler);
-		if(this.endpoint==null)
-			System.err.println("Created null endpoint?!");
+		this.handler = new DataManagerHandler();
+//		this.endpoint = rpcFactory.toService(RpcServices.TITAN.ordinal(), this.handler);
+//		if(this.endpoint==null)
+//			System.err.println("Created null endpoint?!");
 	}
 	
 
@@ -88,7 +79,7 @@ public class DataManager implements Runnable{
 	
 	//TODO: sync-only methods? discard-only(purge/garbage-collection?) methods? 
 	public void syncAndDiscard(){
-		this.dataManager.syncAndDiscard(this.endpoint, this.handler);
+		this.dataManager.syncAndDiscard(this.handler);
 //		System.out.println("Sent "+count+" data items!");
 //		synchronized (this.loadCounter) {
 //			this.loadCounter+=count;
@@ -137,28 +128,59 @@ public class DataManager implements Runnable{
 		}
 	}
 	
-	private class ManagerRpcHandler extends TitanRpcHandler.RpcHandler{
-
-		@Override
-		public void onReceive(RpcHandle handle, DataDelivery m) {
+	private class DataManagerHandler extends SysHandler.ReplyHandler{
+		
+		public DataManagerHandler() {
+			// TODO Auto-generated constructor stub
 		}
-
+		
 		@Override
-		public void onReceive(RpcHandle handle, RpcReply m) {
+		public void onReceive(SetCreateReply reply) {
+			// TODO Auto-generated method stub
+		}
+		@Override
+		public void onReceive(SysmapCreateReply reply) {
+			// TODO Auto-generated method stub
+		}
+		@Override
+		public void onReceive(SysMessageReply reply) {
+			// TODO Auto-generated method stub
+		}
+		@Override
+		public void onReceive(RpcReply reply) {
 			synchronized (syncPool) {
 				syncPool++;
 			}
 		}
-
-		@Override
-		public void onReceive(RpcHandle handle, TriggerDelivery m) {
-			// TODO Auto-generated method stub
-		}
 	}
 	
+//	private class ManagerRpcHandler extends TitanRpcHandler.RpcHandler{
+//
+//		@Override
+//		public void onReceive(RpcHandle handle, DataDelivery m) {
+//		}
+//
+//		@Override
+//		public void onReceive(RpcHandle handle, RpcReply m) {
+//			synchronized (syncPool) {
+//				syncPool++;
+//			}
+//		}
+//
+//		@Override
+//		public void onReceive(RpcHandle handle, TriggerDelivery m) {
+//			// TODO Auto-generated method stub
+//		}
+//	}
+
 	private class DataReader implements Runnable{
 		private BlockingQueue<Data> queue;
 		private SysmapManager dataManager;
+		
+		public DataReader() {
+			// TODO Auto-generated constructor stub
+		}
+		
 		public DataReader(BlockingQueue<Data> data, SysmapManager dataManager) {
 			this.queue = data;
 			this.dataManager = dataManager;
