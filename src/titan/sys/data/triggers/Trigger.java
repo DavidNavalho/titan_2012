@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import titan.data.DataManager;
 import titan.sys.data.Sysmap;
 
-public abstract class Trigger {
+public abstract class Trigger{
 
 	protected Sysmap targetSet;
 	protected String triggerName = "iPlaceholder";
@@ -47,5 +47,14 @@ public abstract class Trigger {
 	//I should change this - I should only need to have a setName as target, right?
 	public Sysmap getTargetSet(){
 		return this.targetSet;
+	}
+	
+	@Override
+	public boolean equals(Object arg0) {
+		Trigger t = (Trigger) arg0;
+		if(this.targetSet.getSetName().equals(t.targetSet.getSetName()))
+			if(this.triggerName.equals(t.triggerName))
+				return true;
+		return false;
 	}
 }

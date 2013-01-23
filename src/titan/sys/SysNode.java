@@ -3,11 +3,8 @@ package titan.sys;
 import static sys.Sys.Sys;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
 
 import sys.dht.DHT_Node;
 import sys.dht.api.DHT;
@@ -15,7 +12,7 @@ import sys.dht.api.DHT.Handle;
 import sys.dht.api.DHT.Key;
 import titan.gateway.setup.PartitionKeyFactory;
 import titan.gateway.setup.SetFactory;
-import titan.sys.data.PartitionKey;
+import titan.sys.data.CreationManagement;
 import titan.sys.data.SysKey;
 import titan.sys.data.SysSet;
 import titan.sys.data.Sysmap;
@@ -34,7 +31,7 @@ import titan.sys.messages.rpc.TriggerDelivery;
 import titan.sys.nodes.PartitionNode;
 import titan.sys.nodes.PartitionNodeHandler;
 import titan.sys.nodes.SysmapHandler;
-import utils.danger.VersionControl;
+//import utils.danger.VersionControl;
 //import static sys.utils.Log.Log;
 
 public class SysNode extends DHT_Node{
@@ -52,8 +49,6 @@ public class SysNode extends DHT_Node{
 	
 	private DHT stub;
 	
-	private Map<String,BlockingQueue<SetCreateReply>> setCreators;
-	
 //	private boolean isMain = false;
 	
 	public SysNode(/*boolean isMain*/) {
@@ -61,7 +56,6 @@ public class SysNode extends DHT_Node{
 		this.replyHandler = new SysNodeReplyHandler();
 		this.sysPartitions = new PartitionNodeHandler();
 		this.sysmaps = new SysmapHandler();
-		this.setCreators = new HashMap<String, BlockingQueue<SetCreateReply>>();
 //		this.isMain = isMain;
 	}
 	
@@ -86,63 +80,45 @@ public class SysNode extends DHT_Node{
 //
 //	}
 	
-	//TODO: I still must define how partitioning is done - manually for now...
-	public Sysmap addSet(String setName, int nPartitions, SetFactory setCreator, PartitionKeyFactory keyMaker){
-		if(!this.sysmaps.contains(setName)){//TODO: no else?
-			//create the sysmap (empty for now)
-			Sysmap sysmap = new Sysmap(setName, nPartitions, setCreator, keyMaker);
-			//first, search for the nodes responsible for the several partitions...
-			this.setCreators.put(setName, new LinkedBlockingQueue<SetCreateReply>());
-			//populate a map with it....
-			try{
-				for(int i=1;i<=nPartitions;i++){
-					Long partitionKey = keyMaker.getPartitionKey(i,setName,nPartitions);
-//					System.err.println("SysMain> ["+i+"] sending set creation to partition: "+setName+"."+partitionKey);
-					SetCreation request = new SetCreation(setName, partitionKey, setCreator);
-					//TODO: blabla
-					System.out.println("Sending partition creation request "+setName+"|partitionKey");
-					this.stub.send(/*new PartitionKey(setName, partitionKey, setCreator)*/new SysKey(partitionKey), request, this.replyHandler);
-					BlockingQueue<SetCreateReply> queue = this.setCreators.get(setName);
-					SetCreateReply reply = queue.take();
-					//add the partition to the sysmap
-//					sysmap.addSysmapInformation(reply.getPartitionKey(), reply.getEndpoint());
-				}
-				//and finally, add the sysmap to the Node's sysmaps map
-				this.sysmaps.addSysmap(sysmap, setName);
+	protected HashMap<String, String> sysmapsControl = new HashMap<String, String>();
+	protected CreationManagement control = new CreationManagement();
+	
+	//TODO: I am returning a sysmap when the creation process may not yet be finished...(due to repeated messages - this can lead to problems later)
+	public Sysmap addSet(SysmapCreationMessage msg){//String setName, int nPartitions, SetFactory setCreator, PartitionKeyFactory keyMaker){
+		String setName = msg.getSetName();
+		int nPartitions = msg.getnPartitions();
+		SetFactory setCreator = msg.getFactory();
+		PartitionKeyFactory keyMaker = msg.getKey();
+		Sysmap sysmap = new Sysmap(setName, nPartitions, setCreator, keyMaker);
+		synchronized (this.sysmapsControl) {
+			System.out.println(this.console+"New sysmap creation message received for "+setName);
+			if(this.sysmapsControl.containsKey(setName)){
+				System.out.println(this.console+"Repeated request for sysmap creation ("+setName+")");
 				return sysmap;
-			}catch(InterruptedException e){
-				e.printStackTrace();//TODO:exceptions handling...
 			}
-/*			Sysmap sysmap = new Sysmap(setName, nPartitions, setCreator, keyMaker);
-			BlockingQueue<SetCreateReply> queue = this.setCreators.get(setName);
-			System.out.println(console+"Waiting for Partitions creation...");
-			try{
-				for(int i=1;i<=nPartitions;i++){
-					System.out.println(console+" Partition created: "+setName+"_"+i);
-					SetCreateReply reply = queue.take();
-					sysmap.addSysmapInformation(reply.getPartitionKey(), reply.getEndpoint());
-				}
-			}catch(InterruptedException e){
-				e.printStackTrace();//TODO:exceptions handling...
+			else{
+				System.out.println("Adding set to sysmapsControl: "+setName);
+				this.sysmapsControl.put(setName, setName);
 			}
-			
-			
-			//and create the sysmap
-//			Sysmap sysmap = new Sysmap(setName, nPartitions, setCreator, keyMaker, map);
-			this.sysmaps.addSysmap(sysmap, setName);*/
-			
-			
-//			LinkedList<SysKey> setPartitions = new LinkedList<SysKey>();
-//			for(int i=0;i<nPartitions;i++){
-//				SysKey partitionKey = new SysKey(setName+"_"+i);
-//				setPartitions.add(partitionKey);
-//			}
-//			Sysmap sysmap = new Sysmap(setPartitions, factory);
-//			this.sysmaps.addSysmap(sysmap, setName);
-		}else{
-			System.err.println(this.console+"Request for duplicate resource sysmap creation: "+setName);
 		}
-		return null;
+		//Partitions need to be created on the several nodes...; and the according sysmap created(done) and returned
+		for(int i=1;i<=nPartitions;i++){
+			Long partitionKey = keyMaker.getPartitionKey(i, setName, nPartitions);
+			//put it on the controller before sending the request!
+			boolean controllerAnswer = this.control.addPartition(setName, nPartitions, partitionKey);
+			if(!controllerAnswer)
+				System.out.println(console+"Attempted to add a repeated partition?");
+			System.out.println("Sending request for partition creation: "+setName+"["+partitionKey+"]");
+			SetCreation request = new SetCreation(setName, partitionKey, setCreator, nPartitions);
+			this.stub.send(new SysKey(partitionKey),request,this.replyHandler);
+			System.out.println("Waiting for request completion...");
+			this.control.waitForCompletion(setName, partitionKey);
+			System.out.println("partition creation succeded");
+		}
+		//since sets are created, we can complete with the sysmap creation...
+		this.sysmaps.addSysmap(sysmap, setName);
+		System.out.println("Sysmap created successfully!");
+		return sysmap;
 	}
 	
 	//TODO: must actually update the other nodes...but since I only have this one right now...
@@ -185,7 +161,6 @@ public class SysNode extends DHT_Node{
 	}
 	
 	public void addPartitionNode(PartitionNode node){
-//		node.setNode();
 		this.sysPartitions.addNode(node);
 	}
 
@@ -272,19 +247,19 @@ public class SysNode extends DHT_Node{
 		@Override
 		public void onReceive(Handle con, Key key, TriggerCreationMessage msg) {
 			System.err.println("Sys> Trigger Creation msg for "+msg.getSetName());
-			VersionControl vc = msg.getVc();
-			synchronized (control) {
-				if(control.containsKey(vc.getId())){
-					VersionControl previous = control.get(vc.getId());
-					if(previous.getVersion()>=vc.getVersion()){
-						System.err.println("Duplicate message! Ignoring...");
-						con.reply(new SysMessageReply("trigger"));//TODO
-						return;
-					}
-				}
-				System.err.println(console+"Trigger Creation message received.");
-				this.control.put(vc.getId(), vc);
-			}
+//			VersionControl vc = msg.getVc();
+//			synchronized (control) {
+//				if(control.containsKey(vc.getId())){
+//					VersionControl previous = control.get(vc.getId());
+//					if(previous.getVersion()>=vc.getVersion()){
+//						System.err.println("Duplicate message! Ignoring...");
+//						con.reply(new SysMessageReply("trigger"));//TODO
+//						return;
+//					}
+//				}
+//				System.err.println(console+"Trigger Creation message received.");
+//				this.control.put(vc.getId(), vc);
+//			}
 			addTrigger(msg.getTrigger(), msg.getSetName());
 			System.err.println(console+"Triggers installed.");
 			con.reply(new SysMessageReply("trigger"));
@@ -292,29 +267,18 @@ public class SysNode extends DHT_Node{
 		
 		@Override
 		public void onReceive(Handle con, Key key, SetCreation message) {
-			System.err.println(console+"Set creation message received: "+message.getSetName()+"|"+message.getPartitionKey());
+			System.out.println(console+"Set creation message received: "+message.getSetName()+"|"+message.getPartitionKey());
 			partitionNodeCreation(message.getPartitionKey(), message.getSetFactory());
-			con.reply(new SetCreateReply(message.getSetName(), message.getPartitionKey(), self.endpoint));
+			System.out.println("Partition created: "+message.getSetName()+"|"+message.getPartitionKey());
+			con.reply(new SetCreateReply(message.getSetName(), message.getTotalPartitions(), message.getPartitionKey()));
 		}
 
-		private HashMap<String, VersionControl> control = new HashMap<String, VersionControl>();
+//		private HashMap<String, VersionControl> control = new HashMap<String, VersionControl>();
 		
 		@Override
 		public void onReceive(Handle con, Key key, SysmapCreationMessage msg) {
 			System.err.println("Sys> Sysmap Creation msg for "+msg.getSetName());
-			VersionControl vc = msg.getVc();
-			synchronized (control) {
-				if(control.containsKey(vc.getId())){
-					VersionControl previous = control.get(vc.getId());
-					if(previous.getVersion()>=vc.getVersion()){
-						System.err.println("Duplicate message! Ignoring...");
-						return;
-					}
-				}
-				System.out.println(console+"Sysmap Creation Message received.");
-				this.control.put(vc.getId(), vc);
-			}
-			Sysmap sysmap = addSet(msg.getSetName(), msg.getnPartitions(), msg.getFactory(), msg.getKey());
+			Sysmap sysmap = addSet(msg);
 			con.reply(new SysmapCreateReply(sysmap));
 		}
 
@@ -352,13 +316,8 @@ public class SysNode extends DHT_Node{
 		
 		@Override
 		public void onReceive(SetCreateReply reply) {
-			System.out.println(console+"Resource partition creation request returned: "+reply.getSetName()+"."+reply.getPartitionKey());
-			try{
-				BlockingQueue<SetCreateReply> queue = setCreators.get(reply.getSetName());
-				queue.put(reply);
-			}catch(InterruptedException e){
-				e.printStackTrace();//TODO: error handling...
-			}
+			System.out.println(console+"Resource partition creation request returned: "+reply.toString());
+			control.addPartition(reply.getSetName(), reply.getTotalPartitions(), reply.getPartitionKey());
 		}
 
 		//TODO: is this being used?

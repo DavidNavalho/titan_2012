@@ -78,11 +78,12 @@ public class GatewayClient {
 //			int tweetsToRetrieve2 = 1000;
 			int sourcePos = 0;
 			//feed the DataManager:
-			int testMax = 30000;
+			int testMax = 50000;
 			while(true){
 				if(testMax<=0){
-					System.out.println("30k tweets done, breaking...");
-					break;
+					System.out.println("50k tweets done, breaking...");
+					dm.syncAndDiscard();
+					return;
 				}
 				testMax--;
 				sourcePos++;
@@ -109,6 +110,8 @@ public class GatewayClient {
 		public void onReceive(SysMessageReply reply) {
 			Sysmap sysmap = ((SysmapReplyMessage) reply).getSysmap();
 			try {
+				if(resourceLocations==null)
+					System.out.println("Empty resource locations?!");
 				resourceLocations.put(sysmap);
 			} catch (InterruptedException e) {
 				e.printStackTrace();

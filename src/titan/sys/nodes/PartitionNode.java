@@ -75,7 +75,7 @@ public class PartitionNode{
 	//TODO: this is still not ok...
 	private void processData(LinkedList<Object> dataToProcess){
 //		System.err.println("SYSTEM TEST");
-		synchronized (triggers) {
+		synchronized (this.triggers) {
 			
 		
 			for (Trigger trigger : triggers) {
@@ -88,8 +88,15 @@ public class PartitionNode{
 	}
 	
 	public void addTrigger(Trigger trigger){
-		trigger.setManager();
-		this.triggers.add(trigger);
+		synchronized (this.triggers) {
+			if(this.triggers.contains(trigger)){
+				System.out.println("Trigger "+trigger.getTriggerName()+" already exists!");
+				return;
+			}
+			trigger.setManager();
+			this.triggers.add(trigger);
+		}
+		
 	}
 
 	public void mergeSet(SysSet mergeableSet) {

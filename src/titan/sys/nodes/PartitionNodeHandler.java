@@ -15,12 +15,14 @@ public class PartitionNodeHandler {
 	}
 	
 	public void addNode(PartitionNode node){
-		Long nodeKey = node.getKey();
-		if(!this.partitionNodes.containsKey(nodeKey)){
-			this.partitionNodes.put(node.getKey(), node);
-			System.err.println("Sys> PartitionKey: "+node.getKey());
-		}else{
-			System.err.println("Sys> Partition "+node.getKey()+" already exists!");
+		synchronized (this.partitionNodes) {
+			Long nodeKey = node.getKey();
+			if(!this.partitionNodes.containsKey(nodeKey)){
+				this.partitionNodes.put(node.getKey(), node);
+				System.err.println("Sys> PartitionKey: "+node.getKey());
+			}else{
+				System.err.println("Sys> Partition "+node.getKey()+" already exists!");
+			}
 		}
 	}
 	

@@ -4,7 +4,6 @@ import sys.dht.api.DHT;
 import titan.gateway.setup.PartitionKeyFactory;
 import titan.gateway.setup.SetFactory;
 import titan.sys.SysHandler;
-import utils.danger.VersionControl;
 
 public class SysmapCreationMessage implements DHT.Message{
 	
@@ -22,14 +21,6 @@ public class SysmapCreationMessage implements DHT.Message{
 		this.setKey = setKey;
 		this.factory = factory;
 		this.setName = setName;
-	}
-	
-	protected VersionControl vc;
-	public void setVC(VersionControl vc){
-		this.vc = vc;
-	}
-	public VersionControl getVc() {
-		return vc;
 	}
 	
 	public int getnPartitions() {

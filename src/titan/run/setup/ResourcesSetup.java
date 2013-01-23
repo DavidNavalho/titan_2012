@@ -6,7 +6,6 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 import sys.dht.api.DHT;
-import titan.gateway.client.GatewayClient;
 import titan.gateway.client.setup.TotalSetFactory;
 import titan.gateway.client.setup.TotalWordsSetKeyFactory;
 import titan.gateway.client.setup.TweetSetFactory;
@@ -29,7 +28,6 @@ import titan.sys.messages.replies.SysMessageReply;
 import titan.sys.messages.replies.SysmapCreateReply;
 import titan.sys.messages.replies.SysmapReplyMessage;
 import titan.sys.messages.rpc.RpcReply;
-import utils.danger.VersionControl;
 //import static sys.utils.Log.Log;
 
 public class ResourcesSetup {
@@ -41,9 +39,8 @@ public class ResourcesSetup {
 	protected BlockingQueue<Sysmap> completeSysmapQueue;
 	protected BlockingQueue<SetCreateReply> triggerQueue;
 	
-	protected VersionControl vc = new VersionControl("test");
-
 	public ResourcesSetup() {
+		this.defaults();
 //		Log.setLevel(Level.ALL);
 		this.sysmapQueue = new LinkedBlockingQueue<Sysmap>();
 		this.completeSysmapQueue = new LinkedBlockingQueue<Sysmap>();
@@ -52,12 +49,30 @@ public class ResourcesSetup {
         this.stub = Sys.getDHT_ClientStub();
 	}
 	
+	public int numberOfPartitions, wcNumberOfPartitions, totalNumberOfPartitions, waitTime1, minLoad1, waitTime2, minLoad2;
+	public void defaults(){
+		//defaults:
+		//DataSets
+		//TweetSet Partitions
+		this.numberOfPartitions = 4;
+		//WordsSet Partitions
+		this.wcNumberOfPartitions = 2;
+		//Final Count Partition -> must be one, so no need to add an argument to it...
+		this.totalNumberOfPartitions = 1;
+		//Triggers:
+		//TweetSet to TweetWordCountSet Trigger
+		this.waitTime1 = 50;//in ms
+		this.minLoad1 = 100;
+		//TweetWordCountSet to TotalWordsCountSet Trigger
+		this.waitTime2 = 50;//in ms
+		this.minLoad2 = 10;
+		//done
+	}
+	
 	public Sysmap createResource(String resourceName, int numberOfPartitions, PartitionKeyFactory resourceKeyFactory, SetFactory resourceFactory){
 //		try {
 			System.err.println(console+"Creating resource: "+resourceName);
 			SysmapCreationMessage scm = new SysmapCreationMessage("registerSet", resourceName, resourceKeyFactory, numberOfPartitions, resourceFactory);
-			this.vc.inc();
-			scm.setVC(this.vc);
 			this.stub.send(new SysKey(resourceName), scm, this.asyncHandler);
 			//wait for set to be created...
 //			Sysmap sysmap = this.sysmapQueue.take();
@@ -87,90 +102,90 @@ public class ResourcesSetup {
 	public void setTrigger(String setName, Trigger trigger){
 		System.out.println(console+"Sending "+setName+" trigger to Titan...");
 		TriggerCreationMessage msg = new TriggerCreationMessage(trigger,setName);
-		this.vc.inc();
-		msg.setVC(this.vc);
 		this.stub.send(new SysKey(setName), msg, this.asyncHandler);
 		//TODO: resume with result...
 	}
 	
-	//this class will submit Sets and Triggers to Titan
-	public static void main(String[] args) {
-		//defaults:
-		//DataSets
-		//TweetSet Partitions
-		int numberOfPartitions = 4;
-		//WordsSet Partitions
-		int wcNumberOfPartitions = 2;
-		//Final Count Partition -> must be one, so no need to add an argument to it...
-		int totalNumberOfPartitions = 1;
-		//Triggers:
-		//TweetSet to TweetWordCountSet Trigger
-		int waitTime1 = 50;//in ms
-		int minLoad1 = 100;
-		//TweetWordCountSet to TotalWordsCountSet Trigger
-		int waitTime2 = 50;//in ms
-		int minLoad2 = 10;
-		//done
-		if((args.length==6)){
-			numberOfPartitions = new Integer(args[0]);
-			wcNumberOfPartitions = new Integer(args[1]);
-			waitTime1 = new Integer(args[2]);
-			minLoad1 = new Integer(args[3]);
-			waitTime2 = new Integer(args[4]);
-			minLoad2 = new Integer(args[5]);
-		}else if(args.length!=0){
-			System.err.println("Incorrect usage: ResourcesSetup TweetPartitions WordsPartitions tweetsToWordWaitTime tweetsToWordMinLoad WordsToCountWaitTime WordsToCountMinLoad");
-			System.exit(0);
-		}
-		//Connect to the DHT...
-		ResourcesSetup rs = new ResourcesSetup();
+	public void TweetSet(){
 		//Create the first Resource: a TweetSet
 		//requires: name, #ofPartitions, resourceFactory
 		String setName = "TweetSet";
 		TweetSetKeyFactory setKey = new TweetSetKeyFactory();
 		SetFactory factory = new TweetSetFactory();
-		/*Sysmap tweetSetSysmap =*/ rs.createResource(setName, numberOfPartitions, setKey, factory);
+		/*Sysmap tweetSetSysmap =*/
+		this.createResource(setName, numberOfPartitions, setKey, factory);
 		String phrase = "Sent TweetSet creation data. Expected keys:";
 		for(int i=1;i<=numberOfPartitions;i++)
 			phrase+=" "+setKey.getPartitionKey(i, setName, numberOfPartitions);
 		System.out.println(phrase);
-		
-		
-//		/*
+	}
+	
+	public void WordCountSet(){
 		//create WordCountSet
 		String wcSetName = "TweetWordCountSet";
 		TweetWCSetKeyFactory wcSetKey = new TweetWCSetKeyFactory();
 		SetFactory wcFactory = new WCTweetSetFactory();
-		rs.createResource(wcSetName, wcNumberOfPartitions, wcSetKey, wcFactory);
+		this.createResource(wcSetName, wcNumberOfPartitions, wcSetKey, wcFactory);
+	}
+	
+	public void TotalWordCountSet(){
 		//create TotalWordCountSet
 		String totalSetName = "TotalWordsCountSet";
 		TotalWordsSetKeyFactory totalSetKey = new TotalWordsSetKeyFactory();
 		SetFactory totalFactory = new TotalSetFactory();
-		rs.createResource(totalSetName, totalNumberOfPartitions, totalSetKey, totalFactory);
+		this.createResource(totalSetName, totalNumberOfPartitions, totalSetKey, totalFactory);
+	}
+	
+	public void Sleep(int ms){
 		try {
 			System.out.println("Sleeping...");
-			Thread.sleep(10000);
+			Thread.sleep(ms);
 			System.out.println("Done sleeping!");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		//Doing a TimeWindow over TotalWords every 
-//		GatewayClient gw = new GatewayClient();
-//		Sysmap wordCountSysmap = gw.requestSysmap("TweetWordCountSet");
-		Sysmap wordCountSysmap = rs.getSysmap("TweetWordCountSet");
+	}
+	
+	public void TweetSetTriggerToWordCount(){
+		String setName = "TweetSet";
+		Sysmap wordCountSysmap = this.getSysmap("TweetWordCountSet");
 		System.out.println("$ "+wordCountSysmap);
-//		Sysmap totalSysmap = gw.requestSysmap("TotalWordsCountSet");
-		Sysmap totalSysmap = rs.getSysmap("TotalWordsCountSet");
-		System.out.println("$ "+totalSysmap);
-		//doing it async for now....
-		//Now that we have the sysmaps, we can add the triggers!
-		//1st Trigger in TweetSet:
 		Trigger trigger = new TweetSetTriggerToWordCount(wordCountSysmap, waitTime1, minLoad1);
-		rs.setTrigger(setName, trigger);
-		//2nd Trigger in TweetWordCountSet
+		this.setTrigger(setName, trigger);
+	}
+	
+	public void TotalWordsCountTrigger(){
+		String wcSetName = "TweetWordCountSet";
+		Sysmap totalSysmap = this.getSysmap("TotalWordsCountSet");
+		System.out.println("$ "+totalSysmap);
 		Trigger trigger2 = new TotalWordsCountTrigger(totalSysmap, waitTime2, minLoad2);
-		rs.setTrigger(wcSetName, trigger2);
-		//*/
+		this.setTrigger(wcSetName, trigger2);
+	}
+	
+	//this class will submit Sets and Triggers to Titan
+	public static void main(String[] args) {
+		//Connect to the DHT...
+		ResourcesSetup rs = new ResourcesSetup();
+		if((args.length==6)){
+			rs.numberOfPartitions = new Integer(args[0]);
+			rs.wcNumberOfPartitions = new Integer(args[1]);
+			rs.waitTime1 = new Integer(args[2]);
+			rs.minLoad1 = new Integer(args[3]);
+			rs.waitTime2 = new Integer(args[4]);
+			rs.minLoad2 = new Integer(args[5]);
+		}else if(args.length!=0){
+			System.err.println("Incorrect usage: ResourcesSetup TweetPartitions WordsPartitions tweetsToWordWaitTime tweetsToWordMinLoad WordsToCountWaitTime WordsToCountMinLoad");
+			System.exit(0);
+		}
+
+		rs.TweetSet();
+		rs.WordCountSet();
+		rs.TotalWordCountSet();
+//		
+		rs.Sleep(10000);
+//		
+		rs.TweetSetTriggerToWordCount();
+		rs.TotalWordsCountTrigger();
 	}
 	
 	private class RSHandler extends  SysHandler.ReplyHandler{
@@ -192,6 +207,7 @@ public class ResourcesSetup {
 		@Override
 		public void onReceive(SysmapCreateReply reply) {
 			try {
+				System.out.println("Sysmap creation complete: "+reply.getSysmap());
 				sysmapQueue.put(reply.getSysmap());
 			} catch (InterruptedException e) {
 				// TODO: error handling

@@ -1,12 +1,11 @@
 package titan.sys.messages.replies;
 
 import sys.dht.api.DHT;
-import sys.net.api.Endpoint;
 import titan.sys.SysHandler;
 
 public class SetCreateReply implements DHT.Reply{
 
-	protected Endpoint endpoint;
+	protected int totalPartitions;
 	protected Long partitionKey;
 	protected String setName;
 	
@@ -14,18 +13,18 @@ public class SetCreateReply implements DHT.Reply{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public SetCreateReply(String setName, Long partitionKey, Endpoint endpoint){
+	public SetCreateReply(String setName, int totalPartitions, Long partitionKey){
 		this.partitionKey = partitionKey;
-		this.endpoint = endpoint;
 		this.setName = setName;
+		this.totalPartitions = totalPartitions;
 	}
 	
 	public String getSetName() {
 		return setName;
 	}
 	
-	public Endpoint getEndpoint() {
-		return endpoint;
+	public int getTotalPartitions() {
+		return totalPartitions;
 	}
 	
 	public Long getPartitionKey() {
@@ -34,7 +33,7 @@ public class SetCreateReply implements DHT.Reply{
 	
 	@Override
 	public String toString() {
-		return "["+endpoint.toString()+"]."+setName+"."+partitionKey;
+		return setName+"["+totalPartitions+"]"+"."+partitionKey;
 	}
 	
 	@Override

@@ -9,14 +9,20 @@ public class SetCreation implements DHT.Message {
 	protected Long partitionKey;
 	protected String setName;
 	protected SetFactory setFactory;
+	protected int totalPartitions;
 	
 	public SetCreation() {
 	}
 	
-	public SetCreation(String setName, Long partitionKey, SetFactory setFactory) {
+	public SetCreation(String setName, Long partitionKey, SetFactory setFactory, int totalPartitions) {
 		this.partitionKey = partitionKey;
 		this.setName = setName;
 		this.setFactory = setFactory;
+		this.totalPartitions = totalPartitions;
+	}
+	
+	public int getTotalPartitions() {
+		return totalPartitions;
 	}
 	
 	public String getSetName() {
