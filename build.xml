@@ -7,7 +7,7 @@
 <project basedir="." default="build" name="TitanProject">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="../../../../../Applications/eclipse"/>
-    <property name="SwiftCloudOctober2012.location" value="../SwiftCloudOctober2012"/>
+    <property name="swiftcloud-smd.location" value="../../../git/swiftcloud-smd"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.6"/>
     <property name="source" value="1.6"/>
@@ -15,28 +15,32 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.junit_4.10.0.v4_10_0_v20120426-0900/junit.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
     </path>
-    <path id="SwiftCloudOctober2012.classpath">
-        <pathelement location="${SwiftCloudOctober2012.location}/bin"/>
+    <path id="swiftcloud-smd.classpath">
+        <pathelement location="${swiftcloud-smd.location}/bin"/>
         <path refid="JUnit 4.libraryclasspath"/>
-        <pathelement location="${SwiftCloudOctober2012.location}/lib/activemq-protobuf-1.0.jar"/>
-        <pathelement location="${SwiftCloudOctober2012.location}/lib/riak-client-1.0.3-jar-with-dependencies.jar"/>
-        <pathelement location="${SwiftCloudOctober2012.location}/lib/easymock-3.1.jar"/>
-        <pathelement location="${SwiftCloudOctober2012.location}/lib/kryo-2.20-all.jar"/>
-        <pathelement location="${SwiftCloudOctober2012.location}/lib/netty-3.5.0.Final.jar"/>
-        <pathelement location="${SwiftCloudOctober2012.location}/lib/ssj.jar"/>
-        <pathelement location="${SwiftCloudOctober2012.location}/lib/xmlpull-1.1.3.1.jar"/>
-        <pathelement location="${SwiftCloudOctober2012.location}/lib/xpp3_min-1.1.4c.jar"/>
-        <pathelement location="${SwiftCloudOctober2012.location}/lib/xstream-1.4.3.jar"/>
-        <pathelement location="${SwiftCloudOctober2012.location}/lib/fuse4j-core-2.4.0.0-SNAPSHOT.jar"/>
-        <pathelement location="${SwiftCloudOctober2012.location}/lib/junit-4.4.jar"/>
-        <pathelement location="${SwiftCloudOctober2012.location}/lib/org.eclipse.jgit-2.1.0.201209190230-r.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/core/db.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/core/kryo-2.20-all.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/core/netty-3.5.0.Final.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/core/riak-client-1.0.3-jar-with-dependencies.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/core/ssj.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/core/xmlpull-1.1.3.1.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/core/xpp3_min-1.1.4c.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/core/xstream-1.4.3.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/extras/activemq-protobuf-1.0.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/extras/aws-java-sdk-1.3.22.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/extras/diffutils-1.2.1.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/extras/easymock-3.1.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/extras/fuse4j-core-2.4.0.0-SNAPSHOT.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/extras/junit-4.4.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/extras/netty-3.5.0.Final-sources.jar"/>
+        <pathelement location="${swiftcloud-smd.location}/lib/extras/org.eclipse.jgit-2.1.0.201209190230-r.jar"/>
     </path>
     <path id="TitanProject.classpath">
         <pathelement location="bin"/>
         <pathelement location="lib/mongo-2.3.jar"/>
-        <path refid="SwiftCloudOctober2012.classpath"/>
         <pathelement location="lib/gson-2.1.jar"/>
         <pathelement location="lib/log4j-1.2.16.jar"/>
+        <path refid="swiftcloud-smd.classpath"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -55,11 +59,11 @@
         <delete dir="bin"/>
     </target>
     <target depends="clean" name="cleanall">
-        <ant antfile="build.xml" dir="${SwiftCloudOctober2012.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${swiftcloud-smd.location}" inheritAll="false" target="clean"/>
     </target>
     <target depends="build-subprojects,build-project" name="build"/>
     <target name="build-subprojects">
-        <ant antfile="build.xml" dir="${SwiftCloudOctober2012.location}" inheritAll="false" target="build-project">
+        <ant antfile="build.xml" dir="${swiftcloud-smd.location}" inheritAll="false" target="build-project">
             <propertyset>
                 <propertyref name="build.compiler"/>
             </propertyset>
@@ -89,14 +93,15 @@
     </target>
     <target name="GatewayClient">
         <java classname="titan.gateway.client.GatewayClient" failonerror="true" fork="yes">
-            <jvmarg line="-Djava.util.logging.config.file=conf/GatewayClient.properties"/>
-            <arg line="1 2"/>
+            <jvmarg line="-Xms512m -Xmx512m -Djava.util.logging.config.file=conf/GatewayClient.properties"/>
+            <arg line="ClientLocations.txt 100 100"/>
             <classpath refid="TitanProject.classpath"/>
         </java>
     </target>
     <target name="ResourcesSetup">
         <java classname="titan.run.setup.ResourcesSetup" failonerror="true" fork="yes">
-            <jvmarg line="-Djava.util.logging.config.file=logging/SystemSetup.properties"/>
+            <jvmarg line="-Djava.util.logging.config.file=conf/ResourcesSetup.properties"/>
+            <arg line="4 4 50 100 50 10"/>
             <classpath refid="TitanProject.classpath"/>
         </java>
     </target>
@@ -135,7 +140,63 @@
     <target name="TweetClient4">
         <java classname="dataSources.TweetClient" failonerror="true" fork="yes">
             <jvmarg line="-Xms512m -Xmx512m"/>
-            <arg line="ClientLocations.txt 2"/>
+            <arg line="ClientLocations.txt 4"/>
+            <classpath refid="TitanProject.classpath"/>
+        </java>
+    </target>
+    <target name="TweetClient5">
+        <java classname="dataSources.TweetClient" failonerror="true" fork="yes">
+            <jvmarg line="-Xms512m -Xmx512m"/>
+            <arg line="ClientLocations.txt 5"/>
+            <classpath refid="TitanProject.classpath"/>
+        </java>
+    </target>
+    <target name="TweetClient6">
+        <java classname="dataSources.TweetClient" failonerror="true" fork="yes">
+            <jvmarg line="-Xms512m -Xmx512m"/>
+            <arg line="ClientLocations.txt 6"/>
+            <classpath refid="TitanProject.classpath"/>
+        </java>
+    </target>
+    <target name="TweetClient7">
+        <java classname="dataSources.TweetClient" failonerror="true" fork="yes">
+            <jvmarg line="-Xms512m -Xmx512m"/>
+            <arg line="ClientLocations.txt 7"/>
+            <classpath refid="TitanProject.classpath"/>
+        </java>
+    </target>
+    <target name="TweetClient8">
+        <java classname="dataSources.TweetClient" failonerror="true" fork="yes">
+            <jvmarg line="-Xms512m -Xmx512m"/>
+            <arg line="ClientLocations.txt 8"/>
+            <classpath refid="TitanProject.classpath"/>
+        </java>
+    </target>
+    <target name="TweetClient9">
+        <java classname="dataSources.TweetClient" failonerror="true" fork="yes">
+            <jvmarg line="-Xms512m -Xmx512m"/>
+            <arg line="ClientLocations.txt 9"/>
+            <classpath refid="TitanProject.classpath"/>
+        </java>
+    </target>
+    <target name="TweetClient10">
+        <java classname="dataSources.TweetClient" failonerror="true" fork="yes">
+            <jvmarg line="-Xms512m -Xmx512m"/>
+            <arg line="ClientLocations.txt 10"/>
+            <classpath refid="TitanProject.classpath"/>
+        </java>
+    </target>
+    <target name="TweetClient11">
+        <java classname="dataSources.TweetClient" failonerror="true" fork="yes">
+            <jvmarg line="-Xms512m -Xmx512m"/>
+            <arg line="ClientLocations.txt 11"/>
+            <classpath refid="TitanProject.classpath"/>
+        </java>
+    </target>
+    <target name="TweetClient12">
+        <java classname="dataSources.TweetClient" failonerror="true" fork="yes">
+            <jvmarg line="-Xms512m -Xmx512m"/>
+            <arg line="ClientLocations.txt 12"/>
             <classpath refid="TitanProject.classpath"/>
         </java>
     </target>

@@ -51,6 +51,7 @@ public abstract class Trigger{
 	
 	@Override
 	public boolean equals(Object arg0) {
+		System.out.println("Comparing Triggers");
 		Trigger t = (Trigger) arg0;
 		if(this.targetSet.getSetName().equals(t.targetSet.getSetName()))
 			if(this.triggerName.equals(t.triggerName))
