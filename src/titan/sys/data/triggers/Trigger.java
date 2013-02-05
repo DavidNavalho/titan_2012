@@ -2,14 +2,14 @@ package titan.sys.data.triggers;
 
 import java.util.LinkedList;
 
-import titan.data.DataManager;
 import titan.sys.data.Sysmap;
+import utils.concurrency.ParallelDataManager;
 
 public abstract class Trigger{
 
 	protected Sysmap targetSet;
 	protected String triggerName = "iPlaceholder";
-	protected DataManager manager;
+	protected ParallelDataManager manager;
 	protected int waitTime = 0;
 	protected int minimumLoad = 1;
 	
@@ -26,9 +26,9 @@ public abstract class Trigger{
 	}
 	
 	public void setManager(){
-//		this.manager = new ParallelDataManager(this.targetSet, this.waitTime, this.minimumLoad);
-			this.manager =	new DataManager(this.targetSet, this.waitTime, this.minimumLoad);
-		new Thread(this.manager).start();
+		this.manager = new ParallelDataManager(this.targetSet, this.waitTime, this.minimumLoad);
+//			this.manager =	new DataManager(this.targetSet, this.waitTime, this.minimumLoad);
+//		new Thread(this.manager).start();
 	}
 	
 	public String getTriggerName() {

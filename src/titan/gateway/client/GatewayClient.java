@@ -8,7 +8,6 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 import sys.dht.api.DHT;
-import titan.data.DataManager;
 import titan.sys.SysHandler;
 import titan.sys.data.SysKey;
 import titan.sys.data.Sysmap;
@@ -20,6 +19,7 @@ import titan.sys.messages.replies.SysmapCreateReply;
 import titan.sys.messages.replies.SysmapReplyMessage;
 import titan.sys.messages.rpc.RpcReply;
 import utils.ClientsManager;
+import utils.concurrency.ParallelDataManager;
 import dataSources.ITweetClient;
 
 
@@ -70,9 +70,9 @@ public class GatewayClient {
 		Sysmap sysmap = gw.requestSysmap("TweetSet");
 		System.out.println("$ "+sysmap);
 		//create a DataManager from the sysmap -> TODO: GWClient should actually use a protocol for this, but for testing purposes now, it should work
-//		ParallelDataManager pdm = new ParallelDataManager(sysmap, maxWaitTime, tweetsToRetrieve);
-		DataManager dm = new DataManager(sysmap, maxWaitTime, tweetsToRetrieve);
-		new Thread(dm).start();
+		ParallelDataManager pdm = new ParallelDataManager(sysmap, maxWaitTime, tweetsToRetrieve);
+//		DataManager dm = new DataManager(sysmap, maxWaitTime, tweetsToRetrieve);
+//		new Thread(dm).start();
 		try{
 			ArrayList<ITweetClient> clients;
 			ClientsManager cm = new ClientsManager(path);
@@ -94,8 +94,8 @@ public class GatewayClient {
 				//Connect to Sources;
 				LinkedList<Tweet> tweets = clients.get(sourcePos).getTweets(tweetsToRetrieve);
 				for (Tweet tweet : tweets) {
-					dm.addData(tweet, tweet.getTweetKey());
-//					pdm.addData(tweet, tweet.getTweetKey());
+//					dm.addData(tweet, tweet.getTweetKey());
+					pdm.addData(tweet, tweet.getTweetKey());
 				}
 				//continuously read X tweets from the sources
 				//and add them to the DataManager

@@ -5,6 +5,8 @@ import static sys.Sys.Sys;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 import sys.dht.DHT_Node;
 import sys.dht.api.DHT;
@@ -48,7 +50,7 @@ public class SysNode extends DHT_Node{
 //	private ServerHandler serverHandler;
 	
 	private DHT stub;
-	
+	private SysNodeDataHandler dataHandler;
 //	private boolean isMain = false;
 	
 	public SysNode(/*boolean isMain*/) {
@@ -56,6 +58,8 @@ public class SysNode extends DHT_Node{
 		this.replyHandler = new SysNodeReplyHandler();
 		this.sysPartitions = new PartitionNodeHandler();
 		this.sysmaps = new SysmapHandler();
+		this.dataHandler = new SysNodeDataHandler();
+		new Thread(this.dataHandler).start();
 //		this.isMain = isMain;
 	}
 	
@@ -208,6 +212,29 @@ public class SysNode extends DHT_Node{
 	
 	private String console = "Sys> ";
 	
+	protected BlockingQueue<DataDelivery> dataQueue;
+	
+	private class SysNodeDataHandler implements Runnable{
+		
+		
+		
+		public SysNodeDataHandler() {
+			dataQueue = new LinkedBlockingQueue<DataDelivery>();
+		}
+		
+		@Override
+		public void run() {
+			while(true){
+				try {
+					DataDelivery dataMsg = dataQueue.take();
+					dataDelivery(dataMsg.getData().getObj(), dataMsg.getPartitionKey());
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
 	//TODO: maybe differentiate the message types....
 	private class SysNodeHandler extends SysHandler.RequestHandler{
 		
@@ -286,7 +313,15 @@ public class SysNode extends DHT_Node{
 		public void onReceive(Handle con, Key key, DataDelivery msg) {
 			// TODO Auto-generated method stub
 //			System.out.println("DataDelivery message received for: "+msg.getPartitionKey());
-			dataDelivery(msg.getData().getObj(), msg.getPartitionKey());
+			
+//			dataDelivery(msg.getData().getObj(), msg.getPartitionKey());
+			try {
+				dataQueue.put(msg);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			
 //			System.out.println("Data delivered!");
 //			System.out.println(console+"Replying!");
 //			if(con.expectingReply())

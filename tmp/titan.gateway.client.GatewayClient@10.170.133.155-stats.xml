@@ -1,5 +1,5 @@
 <sys.stats.RpcStats>
-  <T0>0.9984450560000001</T0>
+  <T0>1.1975541760000001</T0>
   <rpcRTT/>
   <inMsgTraffic>
     <entry>
@@ -17,7 +17,25 @@
             <collect>true</collect>
             <broadcast>false</broadcast>
             <showNobs>true</showNobs>
-            <numObs>32</numObs>
+            <numObs>2465</numObs>
+            <sumSquares>0.0</sumSquares>
+            <isStable>true</isStable>
+            <curAverage>0.0</curAverage>
+            <curSum2>0.0</curSum2>
+            <confidenceInterval>CI_NONE</confidenceInterval>
+            <level>0.95</level>
+            <digits>3</digits>
+          </sys.stats.Tally>
+          <sys.stats.Tally>
+            <listeners/>
+            <name></name>
+            <maxValue>0.0</maxValue>
+            <minValue>0.0</minValue>
+            <sumValue>0.0</sumValue>
+            <collect>true</collect>
+            <broadcast>false</broadcast>
+            <showNobs>true</showNobs>
+            <numObs>2561</numObs>
             <sumSquares>0.0</sumSquares>
             <isStable>true</isStable>
             <curAverage>0.0</curAverage>
@@ -46,7 +64,7 @@
             <collect>true</collect>
             <broadcast>false</broadcast>
             <showNobs>true</showNobs>
-            <numObs>628</numObs>
+            <numObs>2465</numObs>
             <sumSquares>0.0</sumSquares>
             <isStable>true</isStable>
             <curAverage>0.0</curAverage>
@@ -64,25 +82,7 @@
             <collect>true</collect>
             <broadcast>false</broadcast>
             <showNobs>true</showNobs>
-            <numObs>712</numObs>
-            <sumSquares>0.0</sumSquares>
-            <isStable>true</isStable>
-            <curAverage>0.0</curAverage>
-            <curSum2>0.0</curSum2>
-            <confidenceInterval>CI_NONE</confidenceInterval>
-            <level>0.95</level>
-            <digits>3</digits>
-          </sys.stats.Tally>
-          <sys.stats.Tally>
-            <listeners/>
-            <name></name>
-            <maxValue>0.0</maxValue>
-            <minValue>0.0</minValue>
-            <sumValue>0.0</sumValue>
-            <collect>true</collect>
-            <broadcast>false</broadcast>
-            <showNobs>true</showNobs>
-            <numObs>253</numObs>
+            <numObs>2561</numObs>
             <sumSquares>0.0</sumSquares>
             <isStable>true</isStable>
             <curAverage>0.0</curAverage>
