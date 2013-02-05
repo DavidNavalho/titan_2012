@@ -287,8 +287,10 @@ public class SysNode extends DHT_Node{
 			// TODO Auto-generated method stub
 //			System.out.println("DataDelivery message received for: "+msg.getPartitionKey());
 			dataDelivery(msg.getData().getObj(), msg.getPartitionKey());
+//			System.out.println("Data delivered!");
 //			System.out.println(console+"Replying!");
-			con.reply(new RpcReply(true));
+//			if(con.expectingReply())
+//				con.reply(new RpcReply(true));
 		}
 
 		@Override

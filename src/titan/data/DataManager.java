@@ -31,15 +31,6 @@ public class DataManager implements Runnable{
 	private BlockingQueue<Data> data;
 	public static Object lock = new Object();
 	
-	private class Data{
-		public Object data;
-		public SysKey key;
-		public Data(Object data, SysKey key) {
-			this.data = data;
-			this.key = key;
-		}
-	}
-	
 	//There should be a DataManager per Sysmap Requested
 	//e.g, if a Client requests a sysmap for Tweets insertion, it will turn into 1 DataManager (responsible with syncing with the various partitions)
 	//e.g2,	A Trigger on the Twitter Resources (in this case, for ONE Partition), will request a sysmap to send words to. 

@@ -15,6 +15,10 @@ public class TopSet implements SysSet {
 //	private TxnHandle txn;
 
 	public TopSet() {
+		this.setup();
+	}
+	
+	private void setup(){
 		this.set = new ORSet<WordCount>();
 		this.wordCount = new HashMap<String, IntegerTxnLocal>();
 //		this.txn = new TxnTester("top", ClockFactory.newClock());
@@ -29,6 +33,11 @@ public class TopSet implements SysSet {
 	}
 	
 	@Override
+	public void makeEmpty() {
+		this.setup();
+	}
+	
+	@Override
 	public SysData getData() {//TODO: wrong, not using...
 		Iterator<WordCount> it = set.iterator();
 		LinkedList<WordCount> wcs = new LinkedList<WordCount>();
@@ -39,7 +48,7 @@ public class TopSet implements SysSet {
 	}
 	
 	@Override
-	public synchronized Object add(Object data) {
+	public synchronized int add(Object data) {
 		/*
 		  try{
 			WordCount wc = (WordCount) data;
@@ -66,7 +75,7 @@ public class TopSet implements SysSet {
 //		this.set.add(wc, runtime.getCausalityClock().recordNext("TOPSet"));
 		
 //		*/
-		return null;
+		return 1;
 	}
 	//################PLACEHOLDER
 	//################PLACEHOLDER	//################PLACEHOLDER

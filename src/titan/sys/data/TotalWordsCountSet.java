@@ -21,8 +21,13 @@ public class TotalWordsCountSet implements SysSet {
 		this.logger();
 	}
 	
+	
 	@Override
-	public Object add(Object data) {
+	public void makeEmpty() {
+		this.wordCounts = new ORMap<String,Integer>();
+	}
+	@Override
+	public int add(Object data) {
 		Integer count = (Integer) data;
 		synchronized(this.wordCounts){
 			if(!this.wordCounts.lookup("total")){
@@ -34,7 +39,7 @@ public class TotalWordsCountSet implements SysSet {
 			this.wordCounts.insert("total", count);
 		}
 //		System.out.println("TotalWords> "+System.currentTimeMillis()+": Total words: "+count);
-		return null;
+		return 1;
 	}
 
 	@Override

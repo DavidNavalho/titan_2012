@@ -7,7 +7,7 @@
 <project basedir="." default="build" name="TitanProject">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="../../../../../Applications/eclipse"/>
-    <property name="swiftcloud-smd.location" value="../../../git/swiftcloud-smd"/>
+    <property name="swiftcloud-smd.location" value="../swiftcloud-smd"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.6"/>
     <property name="source" value="1.6"/>
@@ -93,15 +93,15 @@
     </target>
     <target name="GatewayClient">
         <java classname="titan.gateway.client.GatewayClient" failonerror="true" fork="yes">
-            <jvmarg line="-Xms512m -Xmx512m -Djava.util.logging.config.file=conf/GatewayClient.properties"/>
-            <arg line="ClientLocations.txt 100 100"/>
+            <jvmarg line="-Xms2048m -Xmx2048m -Djava.util.logging.config.file=conf/GatewayClient.properties"/>
+            <arg line="ClientLocations.txt 100 1000"/>
             <classpath refid="TitanProject.classpath"/>
         </java>
     </target>
     <target name="ResourcesSetup">
         <java classname="titan.run.setup.ResourcesSetup" failonerror="true" fork="yes">
             <jvmarg line="-Djava.util.logging.config.file=conf/ResourcesSetup.properties"/>
-            <arg line="4 4 50 100 50 10"/>
+            <arg line="8 4 50 1000 50 100"/>
             <classpath refid="TitanProject.classpath"/>
         </java>
     </target>

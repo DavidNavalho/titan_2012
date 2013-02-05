@@ -66,9 +66,11 @@ public class GatewayClient {
 		//correct usage:
 		//get a sysmap - ideally, should be synchronous!
 		GatewayClient gw = new GatewayClient();
+		System.out.println("Requesting sysmap!");
 		Sysmap sysmap = gw.requestSysmap("TweetSet");
 		System.out.println("$ "+sysmap);
 		//create a DataManager from the sysmap -> TODO: GWClient should actually use a protocol for this, but for testing purposes now, it should work
+//		ParallelDataManager pdm = new ParallelDataManager(sysmap, maxWaitTime, tweetsToRetrieve);
 		DataManager dm = new DataManager(sysmap, maxWaitTime, tweetsToRetrieve);
 		new Thread(dm).start();
 		try{
@@ -78,14 +80,14 @@ public class GatewayClient {
 //			int tweetsToRetrieve2 = 1000;
 			int sourcePos = 0;
 			//feed the DataManager:
-			int testMax = 50000;
+//			int testMax = 50000;
 			while(true){
-				if(testMax<=0){
-					System.out.println("50k tweets done, breaking...");
-					dm.syncAndDiscard();
-					return;
-				}
-				testMax--;
+//				if(testMax<=0){
+//					System.out.println("50k tweets done, breaking...");
+//					dm.syncAndDiscard();
+//					return;
+//				}
+//				testMax--;
 				sourcePos++;
 				if(sourcePos%clients.size()==0)
 					sourcePos = 0;
@@ -93,6 +95,7 @@ public class GatewayClient {
 				LinkedList<Tweet> tweets = clients.get(sourcePos).getTweets(tweetsToRetrieve);
 				for (Tweet tweet : tweets) {
 					dm.addData(tweet, tweet.getTweetKey());
+//					pdm.addData(tweet, tweet.getTweetKey());
 				}
 				//continuously read X tweets from the sources
 				//and add them to the DataManager

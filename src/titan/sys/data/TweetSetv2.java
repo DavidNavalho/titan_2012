@@ -18,6 +18,11 @@ public class TweetSetv2 implements SysSet {
 //		this.set.setUpdatesRecorder(this.runtime);
 	}
 	
+	@Override
+	public void makeEmpty() {
+		this.set = new ORMap<String,Tweet>();
+	}
+	
 //	private void prepare(){
 //		this.runtime = new CRDTRuntime("TweetSet");//TODO: is this correct? - i dont think it is....shouldnt it be based on the partition?
 //		this.set.setUpdatesRecorder(this.runtime);
@@ -46,14 +51,14 @@ public class TweetSetv2 implements SysSet {
 
 	//TODO
 	@Override
-	public Object add(Object data) {
+	public int add(Object data) {
 //		CRDTRuntime runtime = this.getRuntime();
 		Tweet tweet = (Tweet) data;
 		synchronized (this.set) {//TODO:Ill assume its always new for now...
 //			this.set.add(tweet, runtime.getCausalityClock().recordNext("TweetSet"));
 			this.set.insert(tweet.getKeyAsString(), tweet);
 		}
-		return null;
+		return 1;
 	}
 
 	@Override

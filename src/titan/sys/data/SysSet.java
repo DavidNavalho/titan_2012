@@ -4,12 +4,13 @@ import java.util.LinkedList;
 
 
 public interface SysSet {
-	public Object add(Object data);
+	public int add(Object data);
 	public void merge(SysSet mergeableSet);
 //	public SysSet createEmpty();
 //	public String getSetKey();
 	public SysData getData();
 	public String getPartitionName();
+	public void makeEmpty();
 	
 	public class SysData{
 		

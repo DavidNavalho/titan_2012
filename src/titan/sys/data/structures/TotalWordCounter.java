@@ -24,6 +24,11 @@ public class TotalWordCounter implements SysSet{
 		this.runtime = runtime;
 	}
 	
+	@Override
+	public void makeEmpty() {
+		this.counter = new CRDTInteger(0);
+	}
+	
 	public void setRuntime(CRDTRuntime runtime){
 		this.runtime = runtime;
 	}
@@ -34,7 +39,7 @@ public class TotalWordCounter implements SysSet{
 	}
 	
 	@Override
-	public Object add(Object data) {
+	public int add(Object data) {
 		if(this.runtime==null)
 			this.setInternalRuntime();
 		Integer wc = (Integer) data;

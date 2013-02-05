@@ -10,8 +10,8 @@ import titan.sys.data.SysSet.SysData;
 import titan.sys.messages.rpc.DataDelivery;
 
 public class SysmapManager {
-	private Sysmap sysmap;
-	private Map<Long, SysSet> partitions;
+	protected Sysmap sysmap;
+	protected Map<Long, SysSet> partitions;
 	
 	public SysmapManager() {
 		// TODO Auto-generated constructor stub
@@ -69,7 +69,7 @@ public class SysmapManager {
 				DHT stub = sysmap.getPartition(partitionKey);
 				//TODO: check that this syskey creation is consistent...
 //				System.out.println("Stub: "+stub.toString());
-				stub.send(new SysKey(partitionKey), new DataDelivery("addData",data,partitionKey), clientHandler);//TODO: no timeout?
+				stub.send(new SysKey(partitionKey), new DataDelivery("addData",data,partitionKey)/*, clientHandler*/);//TODO: no timeout?
 //				rpc.send(sysmap.getPartition(partitionKey), new DataDelivery("addData",data,partitionKey), clientRpcHandler, 50);
 //				count+=data.getDataSize();
 			}

@@ -21,6 +21,11 @@ public class WordCountSet implements SysSet {
 		this.wordCounts = new ORMap<String, CRDTInteger>();
 	}
 	
+	@Override
+	public void makeEmpty() {
+		this.wordCounts = new ORMap<String, CRDTInteger>();
+	}
+
 	private CRDTRuntime getRuntime(){
 		CRDTRuntime runtime = new CRDTRuntime();
 		runtime.setSiteId("WCSet");
@@ -61,7 +66,7 @@ public class WordCountSet implements SysSet {
 	}
 	
 	@Override
-	public Object add(Object data) {
+	public int add(Object data) {
 		WordCount wordCount = (WordCount) data;
 		String word = wordCount.getWord();
 		synchronized (this.wordCounts) {
@@ -80,7 +85,7 @@ public class WordCountSet implements SysSet {
 //				this.wordCounts.insert(word, wordCount,this.getRuntime().nextEventClock());
 			}
 		}
-		return null;
+		return 1;
 	}
 	
 	@Override

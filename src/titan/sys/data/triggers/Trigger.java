@@ -26,7 +26,8 @@ public abstract class Trigger{
 	}
 	
 	public void setManager(){
-		this.manager = new DataManager(this.targetSet, this.waitTime, this.minimumLoad);
+//		this.manager = new ParallelDataManager(this.targetSet, this.waitTime, this.minimumLoad);
+			this.manager =	new DataManager(this.targetSet, this.waitTime, this.minimumLoad);
 		new Thread(this.manager).start();
 	}
 	

@@ -20,6 +20,7 @@ import titan.sys.messages.replies.SysMessageReply;
 import titan.sys.messages.replies.SysmapCreateReply;
 import titan.sys.messages.replies.SysmapReplyMessage;
 import titan.sys.messages.rpc.RpcReply;
+import utils.concurrency.ParallelDataManager;
 
 public class FileReaderClient extends CatadupaHandler {
 	
@@ -28,7 +29,7 @@ public class FileReaderClient extends CatadupaHandler {
 	private int tweetsPerSync;
 	private Sysmap sysmap = null;
 	private DataExtractor de = null;
-	private DataManager manager = null;
+	private ParallelDataManager manager = null;
 	
 	protected String console = "Client> ";
 
@@ -67,8 +68,8 @@ public class FileReaderClient extends CatadupaHandler {
 			FileReaderClient.waitForIt(100);
 		}
 		System.out.println(console+"Sysmap received @ "+System.currentTimeMillis());
-		this.manager = new DataManager(this.sysmap, 0, 1);
-		new Thread(this.manager).start();
+		this.manager = new ParallelDataManager(this.sysmap, 0, 1);
+//		new Thread(this.manager).start();
 		//read N tweetsPerSync from file; keep file descriptor; sync & discard; wait for reply;
 //		new PeriodicTask(0.0, 10.0){
 //			public void run(){

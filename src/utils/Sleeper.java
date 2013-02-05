@@ -1,20 +1,17 @@
 package utils;
 
-public class Sleeper implements Runnable {
+public class Sleeper {
 	
-	protected long sleepTime = 100;//default 100ms
-
-	public void setSleep(long sleepTime){
-		this.sleepTime = sleepTime;
+	public Sleeper() {
 	}
 	
-	@Override
-	public void run() {
+	public void sleep(long sleeptime){
 		try {
-			Thread.sleep(this.sleepTime);
+			Thread.sleep(sleeptime);
 		} catch (InterruptedException e) {
-			System.out.println("Thread interrupted (new data inserted)");
+//			System.out.println("Thread interrupted (new data inserted)");
+			e.printStackTrace();
 		}
 	}
-
+	
 }
