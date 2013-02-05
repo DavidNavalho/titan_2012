@@ -78,14 +78,14 @@ public class GatewayClient {
 //			int tweetsToRetrieve2 = 1000;
 			int sourcePos = 0;
 			//feed the DataManager:
-			int testMax = 50000;
+//			int testMax = 50000;
 			while(true){
-				if(testMax<=0){
-					System.out.println("50k tweets done, breaking...");
-					dm.syncAndDiscard();
-					return;
-				}
-				testMax--;
+//				if(testMax<=0){
+//					System.out.println("50k tweets done, breaking...");
+//					dm.syncAndDiscard();
+//					return;
+//				}
+//				testMax--;
 				sourcePos++;
 				if(sourcePos%clients.size()==0)
 					sourcePos = 0;
